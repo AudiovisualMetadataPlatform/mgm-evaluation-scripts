@@ -13,6 +13,7 @@ Python scripts to evaluate MGM output by comparing with ground truth and calcula
 | MGM output File |  -m | --mgm-output-file | any string |
 | Threshold |  -t | --threshold | integer |
 | Category |  -c | --category | AudioSegmentationBySegments, AudioSegmentationBySeconds |
+| Help |  -h | | |
 
 ## Sample commands
 

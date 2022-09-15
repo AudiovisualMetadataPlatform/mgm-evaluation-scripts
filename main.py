@@ -54,7 +54,8 @@ def main(ground_truth_file,mgm_output_file, threshold, category):
         filename = mgm_output_file[0:-5]
         if category == 'AudioSegmentationBySegments':
             audio_segmentation_by_segments = ASBySegments()
-            scores = audio_segmentation_by_segments.compareFiles(ground_truth_file, mgm_output_file, threshold, gt_offset=0, ignore_gender=True)
+            scores, confusion_matrix = audio_segmentation_by_segments.compareFiles(ground_truth_file, mgm_output_file, threshold, gt_offset=0, ignore_gender=True)
+            filename += '_by_segments_'
         elif category == 'AudioSegmentationBySeconds':
             audio_segmentation_by_seconds = ASBySeconds()
             scores, confusion_matrix = audio_segmentation_by_seconds.compareFiles(ground_truth_file, mgm_output_file)
@@ -71,5 +72,3 @@ def main(ground_truth_file,mgm_output_file, threshold, category):
 
 if __name__ == '__main__':
     parseArguments(sys.argv[1:])
-    # python3 main.py -g gloria-gibson-hudson-segments-gt.csv -m 'for-testing-gloria-gibson-hudson-segments.json' -t 2 -c 'AudioSegmentationBySegments'
-    # python3 main.py -g little_500_gt.csv -m little_500_segments.json -c 'AudioSegmentationBySecvd'
