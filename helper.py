@@ -3,6 +3,7 @@ import csv
 import sys
 from datetime import datetime
 import time, logging
+from os.path import exists
 
 def ampJsonToDicts(amp_json):
     """Convert AMP JSON file to a Python list of dicts in a common evaluation format: start (in seconds), end, label"""
@@ -89,3 +90,15 @@ def create_logger():
     return logger
 
 logger = create_logger()
+
+def is_file_existed(file_path):
+    if not exists(file_path):
+        raise Exception(F"File {file_path} doesn't exists.")
+    return True
+
+def readFile(file_path):
+    data = ""
+    if is_file_existed(file_path):
+        with open(file_path, "r") as f:
+            data = f.read()
+    return data

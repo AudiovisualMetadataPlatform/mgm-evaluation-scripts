@@ -3,7 +3,7 @@
 Python scripts to evaluate MGM output by comparing with ground truth and calculate performance metrics.
 
 ### Pre-requisite 
-- Python3.7
+- Python3.9
 
 ## Options available to run script from CLI
 

@@ -1,14 +1,13 @@
-from audio_segmentation.by_segments import BySegments as ASBySegments
-from audio_segmentation.by_seconds import BySeconds as ASBySeconds
 from helper import writeToCsv, logger
 import sys, getopt, logging
+from mgm_evaluation import MGMEvaluation
 
 def parseArguments(argv):
     ground_truth_file = ''
     mgm_output_file = ''
     threshold = ''
     category = ''
-    categories = ['AudioSegmentationBySegments', 'AudioSegmentationBySeconds']
+    categories = ['AudioSegmentationBySegments', 'AudioSegmentationBySeconds', 'SpeechToText']
     try:
         opts, args = getopt.getopt(argv,"hm:t:g:c:",["ground-truth-file=","mgm-output-file=", "threshold=", "category="])
     except getopt.GetoptError as e:
@@ -42,33 +41,7 @@ def parseArguments(argv):
     elif category == '' or category not in categories:
         logger.log(logging.ERROR, "Category is required. Valid categories are {}".format(", ".join(categories)))
     else:
-        main(ground_truth_file,mgm_output_file, threshold, category)
-
-def main(ground_truth_file,mgm_output_file, threshold, category):
-    logger.log(logging.INFO, F"{'*'*10} START PROCESSING {'*'*10}")
-    logger.log(logging.INFO, F"Ground Truth file: {ground_truth_file}")
-    logger.log(logging.INFO, F"MGM output file: {mgm_output_file}")
-    logger.log(logging.INFO, F"Category: {category}")
-    logger.log(logging.INFO, F"Threshold: {threshold}")
-    try:
-        filename = mgm_output_file[0:-5]
-        if category == 'AudioSegmentationBySegments':
-            audio_segmentation_by_segments = ASBySegments()
-            scores, confusion_matrix = audio_segmentation_by_segments.compareFiles(ground_truth_file, mgm_output_file, threshold, gt_offset=0, ignore_gender=True)
-            filename += '_by_segments_'
-        elif category == 'AudioSegmentationBySeconds':
-            audio_segmentation_by_seconds = ASBySeconds()
-            scores, confusion_matrix = audio_segmentation_by_seconds.compareFiles(ground_truth_file, mgm_output_file)
-            filename += '_by_seconds_'
-        scoring_file = filename + 'scores.csv'
-        cf_file = filename + 'matrix_results.csv'
-        writeToCsv(scoring_file, [scores]) # creating scores file
-        logger.log(logging.INFO, F"Score file created: {scoring_file}")
-        writeToCsv(cf_file, confusion_matrix) # creating confusion matrix file
-        logger.log(logging.INFO, F"Confusion Matrix file created: {cf_file}")
-    except:
-        logger.log(logging.ERROR,  F'{sys.exc_info()[0]} exception found')
-    logger.log(logging.INFO, F"{'*'*10} END PROCESSING {'*'*10}")
+        MGMEvaluation().process(ground_truth_file,mgm_output_file, threshold, category)
 
 if __name__ == '__main__':
     parseArguments(sys.argv[1:])
