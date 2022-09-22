@@ -46,3 +46,12 @@ class Metrics():
 
     def characterErrorRate(self, gt, predicted):
         return jiwer.cer(gt, predicted)
+
+    def substitutionErrorRate(self, wer, substitution_prop):
+        return wer*substitution_prop
+
+    def deletionErrorRate(self, wer, deletion_prop):
+        return wer*deletion_prop
+
+    def insertionErrorRate(self, wer, insertion_prop):
+        return wer*insertion_prop

@@ -4,6 +4,7 @@ import sys
 from datetime import datetime
 import time, logging
 from os.path import exists
+from pathlib import Path
 
 def ampJsonToDicts(amp_json):
     """Convert AMP JSON file to a Python list of dicts in a common evaluation format: start (in seconds), end, label"""
@@ -102,3 +103,6 @@ def readFile(file_path):
         with open(file_path, "r") as f:
             data = f.read()
     return data
+
+def fileName(file_path):
+    return Path(file_path).stem

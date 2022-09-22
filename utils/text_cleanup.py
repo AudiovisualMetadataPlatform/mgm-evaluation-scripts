@@ -58,8 +58,10 @@ def numsToWords(transcript):
             newwordlist.append(numword)
             newwordlist.append('cents')
       else:
-        numword = num2words(w)
-        newwordlist.append(numword)
+        digit = re.search(r"(?:\d*\.\d+|\d+)", w).group()
+        numword = num2words(digit)
+        new_word = w.replace(digit, numword)
+        newwordlist.append(new_word)
     else:
       newwordlist.append(w)
   newtranscript = ' '.join(newwordlist)
