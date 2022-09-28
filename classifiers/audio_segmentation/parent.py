@@ -1,4 +1,4 @@
-import classifiers.metrics
+import classifiers.metrics as metrics
 
 class AudioSegmentation:
     def __init__(self, type):

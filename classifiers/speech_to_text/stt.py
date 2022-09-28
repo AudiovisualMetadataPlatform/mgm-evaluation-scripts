@@ -1,4 +1,4 @@
-import classifiers.metrics
+import classifiers.metrics as metrics
 from utils.text_cleanup import *
 import warnings
 import Levenshtein
