@@ -1,7 +1,7 @@
-from audio_segmentation.by_segments import BySegments as ASBySegments
-from audio_segmentation.by_seconds import BySeconds as ASBySeconds
-from speech_to_text.stt import SpeechToText as STT
-from helper import writeToCsv, logger, fileName
+from classifiers.audio_segmentation.by_segments import BySegments as ASBySegments
+from classifiers.audio_segmentation.by_seconds import BySeconds as ASBySeconds
+from classifiers.speech_to_text.stt import SpeechToText as STT
+from utils.helper import writeToCsv, logger, fileName
 import sys, getopt, logging
 
 class MGMEvaluation:

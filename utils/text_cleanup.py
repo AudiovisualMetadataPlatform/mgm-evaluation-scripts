@@ -2,7 +2,7 @@ import re, os
 import string
 from num2words import num2words
 import json
-from helper import *
+from .helper import *
 
 config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
 with open(config_file, "r") as f:

@@ -1,4 +1,4 @@
-from helper import writeToCsv, logger
+from utils.helper import writeToCsv, logger
 import sys, getopt, logging
 from mgm_evaluation import MGMEvaluation
 
