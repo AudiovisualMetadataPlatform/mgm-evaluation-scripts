@@ -1,4 +1,5 @@
 from helper import *
+import jiwer
 
 class Metrics():
 
@@ -30,3 +31,27 @@ class Metrics():
         total = len(gt)
         accuracy = true_pos/total
         return accuracy
+
+    def wordErrorRate(self, gt, predicted):
+        return jiwer.wer(gt, predicted)
+    
+    def matchErrorRate(self, gt, predicted):
+        return jiwer.mer(gt, predicted)
+
+    def wordInfoLoss(self, gt, predicted):
+        return jiwer.wil(gt, predicted)
+
+    def wordInfoProcessed(self, gt, predicted):
+        return jiwer.wip(gt, predicted)
+
+    def characterErrorRate(self, gt, predicted):
+        return jiwer.cer(gt, predicted)
+
+    def substitutionErrorRate(self, wer, substitution_prop):
+        return wer*substitution_prop
+
+    def deletionErrorRate(self, wer, deletion_prop):
+        return wer*deletion_prop
+
+    def insertionErrorRate(self, wer, insertion_prop):
+        return wer*insertion_prop
