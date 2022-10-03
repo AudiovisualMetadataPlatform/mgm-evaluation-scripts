@@ -12,7 +12,7 @@ Python scripts to evaluate MGM output by comparing with ground truth and calcula
 | Ground Truth File |  -g | --ground-truth-file | any string |
 | MGM output File |  -m | --mgm-output-file | any string |
 | Threshold |  -t | --threshold | integer |
-| Category |  -c | --category | AudioSegmentationBySegments, AudioSegmentationBySeconds, SpeechToText |
+| Category |  -c | --category | AudioSegmentationBySegments, AudioSegmentationBySeconds, SpeechToText, ApplauseDetectionBySeconds, ApplauseDetectionBySegments |
 | Help |  -h | | |
 
 ## Sample commands
