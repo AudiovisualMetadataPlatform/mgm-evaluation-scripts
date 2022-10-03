@@ -6,8 +6,8 @@ from utils.helper import *
 from .parent import AudioSegmentation
 
 class BySeconds(AudioSegmentation):
-    def __init__(self):
-        super().__init__('seconds')
+    def __init__(self, labels = ['silence', 'speech', 'music', 'noise']):
+        super().__init__('seconds', labels)
 
     def labelBySecond(self, segments):
         new_list = []

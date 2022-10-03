@@ -7,7 +7,7 @@ def parseArguments(argv):
     mgm_output_file = ''
     threshold = ''
     category = ''
-    categories = ['AudioSegmentationBySegments', 'AudioSegmentationBySeconds', 'SpeechToText']
+    categories = ['AudioSegmentationBySegments', 'AudioSegmentationBySeconds', 'SpeechToText', 'ApplauseDetectionBySeconds', 'ApplauseDetectionBySegments']
     try:
         opts, args = getopt.getopt(argv,"hm:t:g:c:",["ground-truth-file=","mgm-output-file=", "threshold=", "category="])
     except getopt.GetoptError as e:
@@ -36,7 +36,7 @@ def parseArguments(argv):
         logger.log(logging.ERROR, "Ground Truth file is required")
     elif mgm_output_file == '':
         logger.log(logging.ERROR, "MGM output file is required.")
-    elif threshold == '' and category in ['AudioSegmentationBySegments']:
+    elif threshold == '' and category in ['AudioSegmentationBySegments', 'ApplauseDetectionBySegments']:
         logger.log(logging.ERROR, "Threshold is required.")
     elif category == '' or category not in categories:
         logger.log(logging.ERROR, "Category is required. Valid categories are {}".format(", ".join(categories)))

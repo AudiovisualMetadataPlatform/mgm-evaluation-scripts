@@ -1,9 +1,10 @@
 import classifiers.metrics as metrics
 
 class AudioSegmentation:
-    def __init__(self, type):
+    def __init__(self, type, labels):
         self.metrics = metrics.Metrics()
         self.type = type
+        self.labels = labels
 
     def accuracyByLabel(self, tp, gt):
         if self.type == 'seconds':
@@ -12,9 +13,8 @@ class AudioSegmentation:
         elif self.type == 'segments':
             gtbl = self.segmentsByLabel(gt, 'gt')
             tpbl = self.segmentsByLabel(tp, 'tp')
-        labels = ['silence', 'speech', 'music', 'noise']
         accbl = {}
-        for l in labels:
+        for l in self.labels:
             accbl_key = 'accuracy_' + l
             tpbl_key = 'tp_' + l
             gtbl_key = 'gt_' + l

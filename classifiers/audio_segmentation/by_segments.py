@@ -6,8 +6,8 @@ from utils.helper import *
 from .parent import AudioSegmentation
 
 class BySegments(AudioSegmentation):
-    def __init__(self):
-        super().__init__('segments')
+    def __init__(self, labels = ['silence', 'speech', 'music', 'noise']):
+        super().__init__('segments', labels)
 
     def confusionMatrix(self, mgm, gdata, threshold, gt_offset):
         """Get true positives, false positives, and false negatives"""
