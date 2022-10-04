@@ -1,6 +1,5 @@
 import classifiers.metrics as metrics
 from utils.text_cleanup import *
-import warnings
 import Levenshtein
 from typing import Any, Dict, List, Tuple, Union
 from itertools import chain

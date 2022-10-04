@@ -8,14 +8,16 @@ class Metrics():
 
     def precision(self, true_pos, false_pos):
         logger.info("Calculating precision")
-        true_pos = len(true_pos)
+        if isinstance(true_pos, list):
+            true_pos = len(true_pos)
         false_pos = len(false_pos)
         precision = true_pos/(true_pos + false_pos) if (true_pos + false_pos) else 'N/A'
         return precision
 
     def recall(self, true_pos, false_neg):
         logger.info("Calculating recall")
-        true_pos = len(true_pos)
+        if isinstance(true_pos, list):
+            true_pos = len(true_pos)
         false_neg = len(false_neg)
         recall = true_pos/(true_pos + false_neg) if (true_pos + false_neg) else 'N/A'
         return recall

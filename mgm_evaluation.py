@@ -3,6 +3,7 @@ from classifiers.audio_segmentation.by_seconds import BySeconds as ASBySeconds
 from classifiers.speech_to_text.stt import SpeechToText as STT
 from classifiers.applause_detection.by_segments import BySegments as ADBySegments
 from classifiers.applause_detection.by_seconds import BySeconds as ADBySeconds
+from classifiers.shot_detection.classifier import Classifier as ShotDetection
 from utils.helper import writeToCsv, fileName
 import traceback
 from utils.helper import logger
@@ -43,6 +44,11 @@ class MGMEvaluation:
                 scores, output_data = applause_detection_by_seconds.compareFiles(ground_truth_file, mgm_output_file)
                 filename += '_by_seconds_'
                 resultFile = filename + 'matrix'
+            elif category == 'ShotDetection':
+                shot_detection = ShotDetection()
+                scores, output_data = shot_detection.compareFiles(ground_truth_file, mgm_output_file, threshold)
+                filename += '_'
+                resultFile = filename + '_comparison'
             self.generateScoringFile(scores, filename)
             self.generateResultFile(output_data, resultFile)
         except:
