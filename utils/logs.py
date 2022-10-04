@@ -25,7 +25,7 @@ class Logs():
         
 
     def error(self, msg):
-        self.logger.error(logging.ERROR, msg)
+        self.logger.log(logging.ERROR, msg)
 
     def info(self, msg):
         self.logger.log(logging.INFO, msg)
