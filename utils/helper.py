@@ -5,9 +5,12 @@ from datetime import datetime
 import time, logging
 from os.path import exists
 from pathlib import Path
+from .logs import Logs
 
+logger = Logs()
 def ampJsonToDicts(amp_json):
     """Convert AMP JSON file to a Python list of dicts in a common evaluation format: start (in seconds), end, label"""
+    logger.info("Convert AMP JSON file to a Python list of dicts in a common evaluation format: start (in seconds), end, label")
     mgm_output_json = json.load(open(amp_json))
     mgm_output = []
     for s in mgm_output_json['segments']:
@@ -19,6 +22,7 @@ def ampJsonToDicts(amp_json):
     return mgm_output
 
 def ignoreGender(data):
+    logger.info("Update data to ignore gender")
     temp = []
     temp.append(data[0])
     for d in data[1:]:
@@ -52,6 +56,7 @@ def convertSecondsToTimestamp(seconds):
 
 
 def writeToCsv(filename, data):
+    logger.info(f"Creating file {filename}")
     longestlen = 0
     longestlenindex = 0
     for i, t in enumerate(data):
@@ -65,39 +70,14 @@ def writeToCsv(filename, data):
     for d in data:
         writer.writerow(d)
 
-
-def create_logger():
-    logger = logging.getLogger('mgm_evaluation')
-    logger.setLevel(logging.DEBUG)
-
-    # create file handler which logs even debug messages
-    fh = logging.FileHandler('mgm_tests.log')
-    fh.setLevel(logging.DEBUG)
-
-    # create console handler with a higher log level
-    ch = logging.StreamHandler(stream=sys.stdout)
-    ch.setLevel(logging.INFO)
-
-    # create formatter and add it to the handlers
-    formatter = logging.Formatter('[%(asctime)s] %(levelname)8s --- %(message)s ' +
-                                  '(%(filename)s:%(lineno)s)',datefmt='%Y-%m-%d %H:%M:%S')
-    fh.setFormatter(formatter)
-    ch.setFormatter(formatter)
-
-    # add the handlers to the logger
-    logger.addHandler(ch)
-    logger.addHandler(fh)
-
-    return logger
-
-logger = create_logger()
-
 def is_file_existed(file_path):
+    logger.info(f"Checking if file {file_path} existed.")
     if not exists(file_path):
         raise Exception(F"File {file_path} doesn't exists.")
     return True
 
 def readFile(file_path):
+    logger.info(f"Reading file {file_path}")
     data = ""
     if is_file_existed(file_path):
         with open(file_path, "r") as f:

@@ -1,16 +1,22 @@
 import sys
 import os, csv
 import math
-# current = os.path.dirname(os.path.realpath(__file__))
-# parent = os.path.dirname(current)
-# sys.path.append(parent)
-import metrics
-from helper import *
-from audio_segmentation.parent import AudioSegmentation
+import classifiers.metrics
+from utils.helper import *
+from .parent import AudioSegmentation
 
 class BySeconds(AudioSegmentation):
-    def __init__(self):
-        super().__init__('seconds')
+    def __init__(self, type):
+        if type == 'AudioSegmentation':
+            labels= ['silence', 'speech', 'music', 'noise']
+        else:
+            labels= ['applause', 'non-applause']
+            
+        if 'applause' in labels:
+            logger.info("Evaluating Applause Detection By Seconds")
+        else:
+            logger.info("Evaluating Audio Segmentation By Seconds")
+        super().__init__('seconds', labels)
 
     def labelBySecond(self, segments):
         new_list = []
@@ -35,6 +41,7 @@ class BySeconds(AudioSegmentation):
 
 
     def confusionMatrix(self, mgm, gdata):
+        logger.info("Generating confusion matrix")
         """Get true positives, false positives, and false negatives"""
         #True positives are counted for every gt second that matches one or more mgm second
         true_pos = []
@@ -76,6 +83,7 @@ class BySeconds(AudioSegmentation):
 
 
     def compareFiles(self,ground_truth_file, mgm_output_file):
+        logger.info("Comparing ground truth and MGM output files")
         """Compare each mgm with the ground truth to get precision, recall, and f1 scores for each 
         and output a spreadsheet with confusion matrix results. Return scores as a dict."""
         all_scores = []
