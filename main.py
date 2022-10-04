@@ -6,7 +6,8 @@ categories = [
     'AudioSegmentationBySeconds', 
     'SpeechToText', 
     'ApplauseDetectionBySeconds', 
-    'ApplauseDetectionBySegments'
+    'ApplauseDetectionBySegments',
+    'ShotDetection'
     ]
 
 if __name__ == '__main__':
@@ -17,7 +18,7 @@ if __name__ == '__main__':
     parser.add_argument("-c", "--category", type=str,  required=True, help="Evaluation Category.", choices=categories)
     args = parser.parse_args()
 
-    if (args.threshold == None or args.threshold == '') and args.category in ['AudioSegmentationBySegments', 'ApplauseDetectionBySegments']:
+    if (args.threshold == None or args.threshold == '') and args.category in ['AudioSegmentationBySegments', 'ApplauseDetectionBySegments', 'ShotDetection']:
         parser.error("-t requires for category {}".format(args.category))
     
     MGMEvaluation().process(args.ground_truth_file,args.mgm_output_file, args.threshold, args.category)
