@@ -21,7 +21,7 @@ class SpeechToText:
         return scores, output_list
 
     def generate_list(self, normalized_gt, normalized_mgm):
-        logger.log("Generating list")
+        logger.info("Generating list")
         #preprocess texts
         tc, hc = self._preprocess(normalized_gt, normalized_mgm, wer_standardize, wer_standardize)
 
