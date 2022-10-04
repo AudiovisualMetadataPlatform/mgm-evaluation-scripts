@@ -6,11 +6,13 @@ from utils.helper import *
 from .parent import AudioSegmentation
 
 class BySegments(AudioSegmentation):
-    def __init__(self, labels = ['silence', 'speech', 'music', 'noise']):
-        if 'applause' in labels:
-            logger.info("Evaluating Applause Detection By Segments")
-        else:
+    def __init__(self, type='AudioSegmentation'):
+        if type == 'AudioSegmentation':
+            labels= ['silence', 'speech', 'music', 'noise']
             logger.info("Evaluating Audio Segmentation By Segments")
+        else:
+            labels= ['applause', 'non-applause']
+            logger.info("Evaluating Applause Detection By Segments")
         super().__init__('segments', labels)
 
     def confusionMatrix(self, mgm, gdata, threshold, gt_offset):

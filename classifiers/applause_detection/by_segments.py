@@ -2,4 +2,4 @@ from classifiers.audio_segmentation.by_segments import BySegments as ASBySegment
 
 class BySegments(ASBySegments):
     def __init__(self):
-        super().__init__('segments', ['applause', 'non-applause'])
+        super().__init__('ApplauseDetection')

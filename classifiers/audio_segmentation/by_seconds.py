@@ -6,7 +6,12 @@ from utils.helper import *
 from .parent import AudioSegmentation
 
 class BySeconds(AudioSegmentation):
-    def __init__(self, labels = ['silence', 'speech', 'music', 'noise']):
+    def __init__(self, type):
+        if type == 'AudioSegmentation':
+            labels= ['silence', 'speech', 'music', 'noise']
+        else:
+            labels= ['applause', 'non-applause']
+            
         if 'applause' in labels:
             logger.info("Evaluating Applause Detection By Seconds")
         else:

@@ -1,6 +1,8 @@
 from classifiers.audio_segmentation.by_segments import BySegments as ASBySegments
 from classifiers.audio_segmentation.by_seconds import BySeconds as ASBySeconds
 from classifiers.speech_to_text.stt import SpeechToText as STT
+from classifiers.applause_detection.by_segments import BySegments as ADBySegments
+from classifiers.applause_detection.by_seconds import BySeconds as ADBySeconds
 from utils.helper import writeToCsv, fileName
 import traceback
 from utils.helper import logger
@@ -31,6 +33,16 @@ class MGMEvaluation:
                 scores, output_data = STT().evaluate(ground_truth_file, mgm_output_file)
                 filename += "_"
                 resultFile = filename + '_comparison'
+            if category == 'ApplauseDetectionBySegments':
+                applause_detection_by_segments = ADBySegments()
+                scores, output_data = applause_detection_by_segments.compareFiles(ground_truth_file, mgm_output_file, threshold, gt_offset=0, ignore_gender=True)
+                filename += '_by_segments_'
+                resultFile = filename + 'matrix'
+            elif category == 'ApplauseDetectionBySeconds':
+                applause_detection_by_seconds = ADBySeconds()
+                scores, output_data = applause_detection_by_seconds.compareFiles(ground_truth_file, mgm_output_file)
+                filename += '_by_seconds_'
+                resultFile = filename + 'matrix'
             self.generateScoringFile(scores, filename)
             self.generateResultFile(output_data, resultFile)
         except:
