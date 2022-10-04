@@ -7,9 +7,14 @@ from .parent import AudioSegmentation
 
 class BySegments(AudioSegmentation):
     def __init__(self, labels = ['silence', 'speech', 'music', 'noise']):
+        if 'applause' in labels:
+            logger.info("Evaluating Applause Detection By Segments")
+        else:
+            logger.info("Evaluating Audio Segmentation By Segments")
         super().__init__('segments', labels)
 
     def confusionMatrix(self, mgm, gdata, threshold, gt_offset):
+        logger.info("Generating confusion matrix")
         """Get true positives, false positives, and false negatives"""
         #True positives are counted for every gt segment that matches one or more mgm segment
         true_pos = []
@@ -69,6 +74,7 @@ class BySegments(AudioSegmentation):
         return (true_pos, false_pos, false_neg, gt_counts, mgm_counts)
 
     def compareFiles(self, ground_truth_file, mgm_output_file, threshold, gt_offset=0, ignore_gender=True):
+        logger.info("Comparing ground truth and MGM output files")
         """Compare each mgm with the ground truth to get precision, recall, and f1 scores for each 
         and output a spreadsheet with confusion matrix results. Return scores as a dict."""
         all_scores = []

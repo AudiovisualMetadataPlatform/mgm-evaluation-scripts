@@ -1,3 +1,5 @@
 python-Levenshtein
 num2words
 jiwer
+argparse
+traceback

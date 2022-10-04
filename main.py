@@ -1,8 +1,5 @@
 import argparse
-from utils.helper import logger
-import logging
 from mgm_evaluation import MGMEvaluation
-
 
 categories = [
     'AudioSegmentationBySegments', 

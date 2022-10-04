@@ -10,6 +10,7 @@ import utils.helper
 
 class SpeechToText:
     def __init__(self):
+        logger.info("Evaluating Speech To Text")
         self.metrics = metrics.Metrics()
 
     def evaluate(self, ground_truth_file, mgm_output_file):
@@ -21,6 +22,7 @@ class SpeechToText:
         return scores, output_list
 
     def generate_list(self, normalized_gt, normalized_mgm):
+        logger.log("Generating list")
         #preprocess texts
         tc, hc = self._preprocess(normalized_gt, normalized_mgm, wer_standardize, wer_standardize)
 
@@ -65,6 +67,7 @@ class SpeechToText:
 
 
     def scoring(self, normalized_gt, normalized_mgm, error_rates):
+        logger.info("Preparing scores")
         wer = self.metrics.wordErrorRate(normalized_gt,normalized_mgm)
         return {
             "word_error_rate": wer,
@@ -92,6 +95,7 @@ class SpeechToText:
         :param hypothesis_transform: the transformation to apply on the hypothesis input
         :return: the preprocessed truth and hypothesis
         """
+        logger.info("Preprocessing data")
         # Apply transforms. The transforms should collapses input to a list of list of words
         transformed_truth = truth_transform(truth)
         transformed_hypothesis = hypothesis_transform(hypothesis)

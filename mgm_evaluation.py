@@ -1,16 +1,19 @@
 from classifiers.audio_segmentation.by_segments import BySegments as ASBySegments
 from classifiers.audio_segmentation.by_seconds import BySeconds as ASBySeconds
 from classifiers.speech_to_text.stt import SpeechToText as STT
-from utils.helper import writeToCsv, logger, fileName
-import sys, getopt, logging
+from utils.helper import writeToCsv, fileName
+import traceback
+from utils.helper import logger
+
 
 class MGMEvaluation:
+
     def process(self, ground_truth_file,mgm_output_file, threshold, category):
-        logger.log(logging.INFO, F"{'*'*10} START PROCESSING {'*'*10}")
-        logger.log(logging.INFO, F"Ground Truth file: {ground_truth_file}")
-        logger.log(logging.INFO, F"MGM output file: {mgm_output_file}")
-        logger.log(logging.INFO, F"Category: {category}")
-        logger.log(logging.INFO, F"Threshold: {threshold}")
+        logger.info(f"{'*'*10} START PROCESSING {'*'*10}")
+        logger.info(f"Ground Truth file: {ground_truth_file}")
+        logger.info(f"MGM output file: {mgm_output_file}")
+        logger.info(f"Category: {category}")
+        logger.info(f"Threshold: {threshold}")
         try:
             filename = fileName(mgm_output_file)
             resultFile = ''
@@ -31,18 +34,18 @@ class MGMEvaluation:
             self.generateScoringFile(scores, filename)
             self.generateResultFile(output_data, resultFile)
         except:
-            logger.log(logging.ERROR,  F'{sys.exc_info()[0]} exception found')
-        logger.log(logging.INFO, F"{'*'*10} END PROCESSING {'*'*10}")
+            logger.error(traceback.format_exc())
+        logger.info(f"{'*'*10} END PROCESSING {'*'*10}")
 
     def generateScoringFile(self, scores, filename):
         scoring_file = filename + 'scores.csv'
         writeToCsv(scoring_file, [scores]) # creating scores file
-        logger.log(logging.INFO, F"Score file created: {scoring_file}")
+        logger.info(f"Score file created: {scoring_file}")
         return scoring_file
 
     def generateResultFile(self, data, filename):
         result_file = filename + '_results.csv'
         writeToCsv(result_file, data) # creating output result file
-        logger.log(logging.INFO, F"Output Result file created: {result_file}")
+        logger.info(f"Output Result file created: {result_file}")
         return result_file
 

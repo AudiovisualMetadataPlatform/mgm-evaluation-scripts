@@ -5,6 +5,8 @@ import json
 from .helper import *
 
 config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+
+logger.info("Getting config")
 with open(config_file, "r") as f:
   data = json.load(f)
 abbrs = data["abbrs"]
@@ -20,6 +22,7 @@ numwords = data["numwords"]
 # Removing punctuation (except apostrophes)
 def expandAbbr(transcript):
   """Expand abbreviations in abbrs list"""
+  logger.info("Updating transcript to expand abbreviations")
   words = transcript.split(' ')
   newwordlist = []
   for w in words:
@@ -32,12 +35,14 @@ def expandAbbr(transcript):
 
 def expandContractions(transcript):
   """Expand contractions in contractions list"""
+  logger.info("Updating transcript to expand contractions")
   for k,v in contractions.items():
     transcript = transcript.replace(k, v)
   return transcript
 
 def numsToWords(transcript):
   """Convert numbers to words"""
+  logger.info("Updating transcript to convert numbers to words")
   words = transcript.split(' ')
   newwordlist = []
   for w in words:
@@ -70,6 +75,7 @@ def numsToWords(transcript):
 
 def umuh(transcript):
   """Remove 'um's and 'uh's from transcript """
+  logger.info("Updating transcript to remove um's and uh's")
   transcript = transcript.replace('um', '')
   transcript = transcript.replace('uh', '')
   return transcript
@@ -77,6 +83,7 @@ def umuh(transcript):
 def normalize(transcript):
     transcript = readFile(transcript)
     """Normalize a GT transcript or MGM output for WER comparison."""
+    logger.info("Normalizing GT transcript or MGM output for WER comparison")
     #lowercase
     transcript = transcript.lower().replace ('%', ' percent')
     #expand abbreviations
