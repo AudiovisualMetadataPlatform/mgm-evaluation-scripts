@@ -1,11 +1,5 @@
 import classifiers.metrics as metrics
-from utils.text_cleanup import *
-import Levenshtein
-from typing import Any, Dict, List, Tuple, Union
-from itertools import chain
-from jiwer import transforms as tr
-from jiwer.transformations import wer_default, wer_standardize, cer_default_transform
-import utils.helper
+from utils.helper import *
 
 class Classifier():
     def __init__(self):
@@ -13,6 +7,7 @@ class Classifier():
         self.metrics = metrics.Metrics()
 
     def getConfusionMatrix(self, mgm, gt, threshold, shot_type):
+        logger.info("Creating confusion matrix")
         """Get true positives, false positives, and false negatives"""
         #True positives are counted for every gt transition that matches one or more mgm transition
         true_pos = []
@@ -73,6 +68,7 @@ class Classifier():
     def compareFiles(self, gtfile, mgmfile, threshold):
         """Compare each mgm with the ground truth to get precision, recall, and f1 scores
         and output a csv file with confusion matrix results. Output scores as a csv file."""
+        logger.info("Comparing ground truth and MGM output files")
         shot_type='shot'
         gt = csv.DictReader(open(gtfile, 'r'))
         gt = [g for g in gt]
