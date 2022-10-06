@@ -13,8 +13,11 @@ class SpeechToText:
         self.metrics = metrics.Metrics()
 
     def evaluate(self, ground_truth_file, mgm_output_file):
-        normalized_gt = normalize(ground_truth_file)
-        normalized_mgm = normalize(mgm_output_file)
+        transcript = readFile(ground_truth_file)
+        normalized_gt = normalize(transcript)
+        mgm = json.load(open(mgm_output_file, 'r'))
+        transcript = mgm["results"]["transcript"]
+        normalized_mgm = normalize(transcript)
         output_list = self.generate_list(normalized_gt, normalized_mgm)
         errors = self.getErrorProportionPerType(output_list)
         scores = self.scoring(normalized_gt, normalized_mgm, errors)
