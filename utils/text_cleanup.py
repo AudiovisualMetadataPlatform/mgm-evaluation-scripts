@@ -81,7 +81,6 @@ def umuh(transcript):
   return transcript
 
 def normalize(transcript):
-    transcript = readFile(transcript)
     """Normalize a GT transcript or MGM output for WER comparison."""
     logger.info("Normalizing GT transcript or MGM output for WER comparison")
     #lowercase

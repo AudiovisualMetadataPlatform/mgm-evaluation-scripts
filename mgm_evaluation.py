@@ -33,7 +33,7 @@ class MGMEvaluation:
             elif category == 'SpeechToText':
                 scores, output_data = STT().evaluate(ground_truth_file, mgm_output_file)
                 filename += "_"
-                resultFile = filename + '_comparison'
+                resultFile = filename + 'comparison'
             if category == 'ApplauseDetectionBySegments':
                 applause_detection_by_segments = ADBySegments()
                 scores, output_data = applause_detection_by_segments.compareFiles(ground_truth_file, mgm_output_file, threshold, gt_offset=0, ignore_gender=True)
@@ -48,7 +48,7 @@ class MGMEvaluation:
                 shot_detection = ShotDetection()
                 scores, output_data = shot_detection.compareFiles(ground_truth_file, mgm_output_file, threshold)
                 filename += '_'
-                resultFile = filename + '_comparison'
+                resultFile = filename + 'comparison'
             self.generateScoringFile(scores, filename)
             self.generateResultFile(output_data, resultFile)
         except:

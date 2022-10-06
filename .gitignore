@@ -6,3 +6,4 @@ __pycache__
 mydf.py
 original.py
 data/
+.DS_Store
