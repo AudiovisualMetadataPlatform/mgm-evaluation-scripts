@@ -29,7 +29,7 @@ $ python3 main.py -g little_500_gt.csv -m little_500_segments.json -c AudioSegme
 
 ### Speech To Text
 ```bash
-$ python3 main.py -g sample_gt.txt -m sample_aws.txt -c SpeechToText
+$ python3 main.py -g sample_gt.txt -m sample_aws.json -c SpeechToText
 ```
 
 ### Shot Detection
