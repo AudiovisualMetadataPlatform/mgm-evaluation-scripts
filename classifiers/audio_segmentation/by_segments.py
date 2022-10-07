@@ -103,10 +103,10 @@ class BySegments(AudioSegmentation):
         for sm in sorted_mo:
             if 's_distance' not in sm and 'gt_start' in sm:
                 del sm['start']
-                #also convert all the time in seconds to timestamps for easier reading in a spreadsheet
-                for k, v in sm.items():
-                    if k in ['gt_start', 'gt_end', 'start', 'end']:
-                        sm[k] = convertSecondsToTimestamp(v)
+            #also convert all the time in seconds to timestamps for easier reading in a spreadsheet
+            for k, v in sm.items():
+                if k in ['gt_start', 'gt_end', 'start', 'end']:
+                    sm[k] = convertSecondsToTimestamp(v)
         scores = self.scoring(cf, gt, mgm)
         scores['analysis_threshold'] = threshold
         return scores, sorted_mo
