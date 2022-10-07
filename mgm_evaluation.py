@@ -4,6 +4,7 @@ from classifiers.speech_to_text.stt import SpeechToText as STT
 from classifiers.applause_detection.by_segments import BySegments as ADBySegments
 from classifiers.applause_detection.by_seconds import BySeconds as ADBySeconds
 from classifiers.shot_detection.classifier import Classifier as ShotDetection
+from classifiers.video_optical_character_recognition.vocr import VideoOpticalCharacterRecognition as VOCR
 from utils.helper import writeToCsv, fileName
 import traceback
 from utils.helper import logger
@@ -49,6 +50,12 @@ class MGMEvaluation:
                 scores, output_data = shot_detection.compareFiles(ground_truth_file, mgm_output_file, threshold)
                 filename += '_'
                 resultFile = filename + 'comparison'
+            elif category == 'VOCRUniqueTexts':
+                vocr = VOCR('unique text')
+                scores, output_data = vocr.compareFiles(ground_truth_file, mgm_output_file)
+                filename += '_'
+                resultFile = filename + 'comparison'
+
             self.generateScoringFile(scores, filename)
             self.generateResultFile(output_data, resultFile)
         except:

@@ -86,3 +86,13 @@ def readFile(file_path):
 
 def fileName(file_path):
     return Path(file_path).stem
+
+
+def uniqueTexts(data):
+  unique = list(set([d['text'] for d in data]))
+  return unique
+
+def gtToDicts(gt_file):
+  gt = csv.DictReader(open(gt_file, 'r'))
+  gt = [g for g in gt]
+  return gt

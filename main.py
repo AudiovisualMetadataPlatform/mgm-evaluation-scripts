@@ -7,7 +7,8 @@ categories = [
     'SpeechToText', 
     'ApplauseDetectionBySeconds', 
     'ApplauseDetectionBySegments',
-    'ShotDetection'
+    'ShotDetection',
+    'VOCRUniqueTexts'
     ]
 
 if __name__ == '__main__':
