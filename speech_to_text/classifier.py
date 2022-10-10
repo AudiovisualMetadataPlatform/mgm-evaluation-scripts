@@ -1,13 +1,13 @@
-import classifiers.metrics as metrics
-from utils.text_cleanup import *
+import metrics as metrics
+from text_cleanup import *
 import Levenshtein
 from typing import Any, Dict, List, Tuple, Union
 from itertools import chain
 from jiwer import transforms as tr
 from jiwer.transformations import wer_default, wer_standardize, cer_default_transform
-import utils.helper
+import helper
 
-class SpeechToText:
+class Classifier():
     def __init__(self):
         logger.info("Evaluating Speech To Text")
         self.metrics = metrics.Metrics()
@@ -18,12 +18,12 @@ class SpeechToText:
         mgm = json.load(open(mgm_output_file, 'r'))
         transcript = mgm["results"]["transcript"]
         normalized_mgm = normalize(transcript)
-        output_list = self.generate_list(normalized_gt, normalized_mgm)
+        output_list = self.generate_comparison_list(normalized_gt, normalized_mgm)
         errors = self.getErrorProportionPerType(output_list)
         scores = self.scoring(normalized_gt, normalized_mgm, errors)
         return scores, output_list
 
-    def generate_list(self, normalized_gt, normalized_mgm):
+    def generate_comparison_list(self, normalized_gt, normalized_mgm):
         logger.info("Generating list")
         #preprocess texts
         tc, hc = self._preprocess(normalized_gt, normalized_mgm, wer_standardize, wer_standardize)

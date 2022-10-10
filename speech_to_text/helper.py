@@ -5,7 +5,7 @@ from datetime import datetime
 import time, logging
 from os.path import exists
 from pathlib import Path
-from .logs import Logs
+from logs import Logs
 
 logger = Logs()
 def ampJsonToDicts(amp_json):
