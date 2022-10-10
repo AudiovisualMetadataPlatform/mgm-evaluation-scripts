@@ -16,5 +16,5 @@ Python script to evaluate Speech-To-Text MGM output by comparing with ground tru
 ## Sample commands
 
 ```bash
-$ python3 speech_to_text.py -g sample_gt.txt -m sample_aws.json -c SpeechToText
+$ python3 speech_to_text.py -g sample_gt.txt -m sample_aws.json
 ```
