@@ -5,7 +5,6 @@ from typing import Any, Dict, List, Tuple, Union
 from itertools import chain
 from jiwer import transforms as tr
 from jiwer.transformations import wer_default, wer_standardize, cer_default_transform
-import helper
 
 class Classifier():
     def __init__(self):

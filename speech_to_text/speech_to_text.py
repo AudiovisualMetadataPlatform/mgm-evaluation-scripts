@@ -11,7 +11,7 @@ if __name__ == '__main__':
     try:
         filename = fileName(args.mgm_output_file)
         scores, output_data = STT().evaluate(args.ground_truth_file, args.mgm_output_file)
-        writeToCsv(scores, filename + '_scores.csv')
-        writeToCsv(output_data, filename + '_comparison_results.csv')
+        writeToCsv(filename + '_scores.csv', [scores])
+        writeToCsv(filename + '_comparison_results.csv', output_data)
     except:
         logger.error(traceback.format_exc())

@@ -4,9 +4,9 @@ from num2words import num2words
 import json
 from helper import *
 
-config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mappings.json")
 
-logger.info("Getting config")
+logger.info("Getting mappings for abbrivaions, contractions and numberToWords")
 with open(config_file, "r") as f:
   data = json.load(f)
 abbrs = data["abbrs"]
