@@ -1,11 +1,12 @@
 import json
 import csv
-import sys
+import sys, os
 from datetime import datetime
 import time, logging
 from os.path import exists
 from pathlib import Path
 from .logs import Logs
+from itertools import groupby
 
 logger = Logs()
 def ampJsonToDicts(amp_json):
@@ -86,3 +87,27 @@ def readFile(file_path):
 
 def fileName(file_path):
     return Path(file_path).stem
+
+
+def readCSVFile(filename):
+    logger.info(f"Reading CSV file {filename}")
+    if is_file_existed(filename):
+        return csv.DictReader(open(filename, 'r'))
+    else:
+        raise Exception(f"File {filename} not found!!")
+
+def readJSONFile(filename):
+    logger.info(f"Reading JSON file {filename}")
+    if is_file_existed(filename):
+        return json.load(open(filename, 'r'))
+    else:
+        raise Exception(f"File {filename} not found!!")
+
+def canonicalize_dict(x):
+    "Return a (key, value) list sorted by the hash of the key"
+    return sorted(x.items(), key=lambda x: hash(x[0]))
+
+def unique_and_count(lst):
+    "Return a list of unique dicts with a 'count' key added"
+    grouper = groupby(sorted(map(canonicalize_dict, lst)))
+    return [dict(k + [("count", len(list(g)))]) for k, g in grouper]
