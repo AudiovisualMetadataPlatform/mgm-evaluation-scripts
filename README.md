@@ -12,7 +12,10 @@ Python scripts to evaluate MGM output by comparing with ground truth and calcula
 | Ground Truth File |  -g | --ground-truth-file | any string |
 | MGM output File |  -m | --mgm-output-file | any string |
 | Threshold |  -t | --threshold | integer |
-| Category |  -c | --category | AudioSegmentationBySegments, AudioSegmentationBySeconds, SpeechToText, ApplauseDetectionBySeconds, ApplauseDetectionBySegments, ShotDetection |
+| Category |  -c | --category | AudioSegmentationBySegments, AudioSegmentationBySeconds, SpeechToText, ApplauseDetectionBySeconds, ApplauseDetectionBySegments, ShotDetection NERAllEntityInstancesToolSpecified, NERUniqueEntityInstancesToolSpecified |
+| Tool | | --tool | spacy, comprehend |
+| Types | | --types | comma separated string |
+| Type Match | | --type-match | Boolean |
 | Help |  -h | | |
 
 ## Sample commands
@@ -35,4 +38,25 @@ $ python3 main.py -g sample_gt.txt -m sample_aws.json -c SpeechToText
 ### Shot Detection
 ```bash
 $ python3 main.py -g journey_to_center_triangle_gt.csv -m journey_to_center_triangle_azure.json -c ShotDetection -t 3
+```
+
+### Named Entity Recognition
+
+#### Unique Entity Instances(tool specified)
+```bash
+$ python3 main.py -g sample_gt.csv -m sample_aws.json -c NERUniqueEntityInstancesToolSpecified --tool comprehend
+```
+
+```bash
+$ python3 main.py -g sample_gt.csv -m sample_spacy.json -c NERUniqueEntityInstancesToolSpecified --tool spacy
+```
+
+#### All Entity Instances(tool specified)
+
+```bash
+$ python3 main.py -g sample_gt.csv -m sample_aws.json -c NERAllEntityInstancesToolSpecified --tool comprehend
+```
+
+```bash
+$ python3 main.py -g sample_gt.csv -m sample_spacy.json -c NERAllEntityInstancesToolSpecified --tool spacy
 ```
