@@ -1,8 +1,10 @@
 from utils.helper import *
 
 class AllEntityInstances():
-    def __init__(self, entity_keys, type):
+    def __init__(self, entity_keys, type, entity_set, ground_truth_entities):
         self.entity_keys = entity_keys
+        self.entity_set = entity_set
+        self.ground_truth_entities = ground_truth_entities
         self.type = type
 
     def comparison(self, gt, mgm, tool, types, type_match=False):
@@ -15,8 +17,9 @@ class AllEntityInstances():
         gt = readCSVFile(filename)
         gt = [g for g in gt]
         for g in gt:
-            #uppercase entity types in case they are not already upper
-            g['type'] = g['type'].upper()
+            #convert entity type to corresponding common entity type if entity_set selected is 'common'
+            if self.entity_set == 'common':
+                g['type'] = self.entity_keys[self.ground_truth_entities][g['type'].upper()]
             #name type and text unique to gt
             g['gt_type'] = g.pop('type')
             g['gt_text'] = g.pop('text')
@@ -25,7 +28,11 @@ class AllEntityInstances():
     def mgm_output_values(self, filename):
         mgm = readJSONFile(filename)
         mgm = mgm['entities']
-        #name type and text unique to mgm
+        for m in mgm:
+            #convert entity type to corresponding common entity type if entity_set selected is 'common'
+            if self.entity_set == 'common':
+                m['type'] = self.entity_keys[self.entity_set][m['type'].upper()]
+            #name type and text unique to mgm
         for m in mgm:
             m['mgm_type'] = m.pop('type')
             m['mgm_text'] = m.pop('text')

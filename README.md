@@ -14,8 +14,9 @@ Python scripts to evaluate MGM output by comparing with ground truth and calcula
 | Threshold |  -t | --threshold | integer |
 | Category |  -c | --category | AudioSegmentationBySegments, AudioSegmentationBySeconds, SpeechToText, ApplauseDetectionBySeconds, ApplauseDetectionBySegments, ShotDetection NERAllEntityInstancesToolSpecified, NERUniqueEntityInstancesToolSpecified |
 | Tool | | --tool | spacy, comprehend |
-| Types | | --types | comma separated string |
-| Type Match | | --type-match | Boolean |
+| Entity Set | | --entity-set | spacy, comprehend, common |
+| Ground Truth Entities | | --ground-truth-entities | spacy, comprehend, common |
+| Match Types | | --match-types | Boolean |
 | Help |  -h | | |
 
 ## Sample commands

@@ -1,11 +1,12 @@
 {
-    "gt": {
+    "common": {
         "PERSON": "PERSON",
         "ORG": "ORG",
         "DATE": "DATE",
         "LOCATION": "LOCATION",
         "EVENT": "EVENT",
-        "CONCEPT": "CONCEPT"
+        "CONCEPT": "CONCEPT",
+        "NUMBER": "NUMBER"
     },
     "spacy": {
         "PERSON": "PERSON",
@@ -18,7 +19,14 @@
         "LAW": "CONCEPT",
         "WORK_OF_ART": "CONCEPT",
         "NORP": "CONCEPT",
-        "PRODUCT": "CONCEPT"
+        "PRODUCT": "CONCEPT",
+        "LANGUAGE": "CONCEPT",
+        "TIME": "DATE",
+        "PERCENT": "NUMBER",
+        "MONEY": "NUMBER",
+        "QUANTITY": "NUMBER",
+        "ORDINAL": "NUMBER",
+        "CARDINAL": "NUMBER"
     },
     "comprehend": {
         "PERSON": "PERSON",
@@ -28,6 +36,7 @@
         "TITLE": "CONCEPT",
         "DATE": "DATE",
         "OTHER": "CONCEPT",
-        "COMMERCIAL_ITEM": "CONCEPT"
+        "COMMERCIAL_ITEM": "CONCEPT",
+        "QUANTITY": "NUMBER"
     }
 }

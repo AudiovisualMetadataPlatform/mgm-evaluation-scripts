@@ -1,29 +1,36 @@
 from utils.helper import *
 
 class UniqueEntityInstances():
-    def __init__(self, entity_keys, type):
+    def __init__(self, entity_keys, type, entity_set, ground_truth_entities):
         self.entity_keys = entity_keys
+        self.entity_set = entity_set
+        self.ground_truth_entities = ground_truth_entities
         self.type = type
 
     def comparison(self, gt, mgm, tool, types, type_match=False):
-        gt = self.ground_truth_values(gt, tool, types)
-        mgm = self.mgm_output_values(mgm, tool, types)
+        gt = self.ground_truth_values(gt, types)
+        mgm = self.mgm_output_values(mgm, types, tool)
         if self.type == 'tool_specified':
             return self.tool_specified_comparisons(gt, mgm, tool, types, type_match)
 
-    def ground_truth_values(self, filename, tool, types):
+    def ground_truth_values(self, filename, types):
         gt = readCSVFile(filename)
+        gt = [g for g in gt]
         new_gt = []
+        #if no specific types are specified, use all of them
+        if len(types) == 0:
+            types = [k for k, v in self.entity_keys[self.entity_set].items()]
+            types = [t.upper() for t in types]
         for g in gt:
-            if len(types) == 0:
-                types = [k for k, v in self.entity_keys[tool].items()]
-                types = [t.upper() for t in types]
-            if g['type'].upper() in types:
+            #convert entity type to corresponding common entity type if entity_set selected is 'common'
+            if self.entity_set == 'common':
+                g['type'] = self.entity_keys[self.ground_truth_entities][g['type'].upper()]
+            #we only care about comparing entities that are in the list of types specified
+            if g['type'] in types:
                 new_g = {}
-                #uppercase entity types in case they are not already upper
-                new_g['gt_type'] = g['type'].upper()
                 #name type and text unique to gt
                 new_g['gt_text'] = g['text']
+                new_g['gt_type'] = g['type']
                 new_gt.append(new_g)
         #get unique list of dicts and counts
         unique_gt = unique_and_count(new_gt)
@@ -31,18 +38,22 @@ class UniqueEntityInstances():
             u['gt_count'] = u.pop('count')
         return unique_gt
 
-    def mgm_output_values(self, filename, tool, types):
+    def mgm_output_values(self, filename, types, tool):
         mgm = readJSONFile(filename)
         mgm = mgm['entities']
         new_mgm = []
+        #if no specific types are specified, use all of them
         if len(types) == 0:
-            types = [k for k, v in self.entity_keys[tool].items()]
-            types = [t.upper() for t in types]
-        #name type and text unique to mgm
+            types = [k for k, v in self.entity_keys[self.entity_set].items()]
         for m in mgm:
-            if m['type'].upper() in types:
+            #convert entity type to corresponding common entity type if entity_set selected is 'common'
+            if self.entity_set == 'common':
+                m['type'] = self.entity_keys[tool][m['type'].upper()]
+            #we only care about comparing entities that are in the list of types specified
+            if m['type'] in types:
                 new_m = {}
-                new_m['mgm_type'] = m['type'].upper()
+                #name type and text unique to mgm
+                new_m['mgm_type'] = m['type']
                 new_m['mgm_text'] = m['text']
                 new_mgm.append(new_m)
         #get unique list of dicts and counts

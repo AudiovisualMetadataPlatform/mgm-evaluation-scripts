@@ -4,20 +4,17 @@ from .all_entity_instances import AllEntityInstances
 from .unique_entity_instances import UniqueEntityInstances 
 
 class Classifier():
-    def __init__(self, test_case):
+    def __init__(self, test_case, entity_set, ground_truth_entities):
         self.entity_keys = readJSONFile(os.path.join(os.path.dirname(os.path.abspath(__file__)), "entity_keys.json"))
         self.metrics = Metrics()
         if test_case == 'all_entity_instances_tool_specified':
-            self.instance = AllEntityInstances(self.entity_keys, 'tool_specified')
+            self.instance = AllEntityInstances(self.entity_keys, 'tool_specified', entity_set, ground_truth_entities)
         elif test_case == 'unique_entity_instances_tool_specified':
-            self.instance = UniqueEntityInstances(self.entity_keys, 'tool_specified')
+            self.instance = UniqueEntityInstances(self.entity_keys, 'tool_specified', entity_set, ground_truth_entities)
         
 
-    def evaluate(self, ground_truth_file, mgm_output_file, tool, types, type_match=False):
-        if types is not None and types != '':
-            types = types.split(",")
-        else:
-            types = []
+    def evaluate(self, ground_truth_file, mgm_output_file, tool, type_match=False):
+        types = []
         comparisons = self.instance.comparison(ground_truth_file, mgm_output_file, tool, types, type_match)
         scores = self.scores(comparisons)
         return scores, comparisons['tp'] + comparisons['fp'] + comparisons['fn']

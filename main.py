@@ -18,9 +18,10 @@ if __name__ == '__main__':
     parser.add_argument("-m", "--mgm-output-file", type=str, required=True, help="MGM output file path.")
     parser.add_argument("-t", "--threshold", type=int, help="Threshold value.")
     parser.add_argument("-c", "--category", type=str,  required=True, help="Evaluation Category.", choices=categories)
-    parser.add_argument("--types", type=str, help="Types of Named Entity Recognition")
+    parser.add_argument("--entity-set", type=str, help="Entity set of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
+    parser.add_argument("--ground-truth-entities", type=str, help="Ground truth entities of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
     parser.add_argument("--tool", type=str, help="MGM Tool used Named Entity Recognition output.", choices=['spacy', 'comprehend'])
-    parser.add_argument("--type-match", type=bool, help="Entity or Entity type should match", default=False)
+    parser.add_argument("--match-types", type=bool, help="Entity or Entity type should match", default=False)
 
     args = parser.parse_args()
     print(args)

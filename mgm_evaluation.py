@@ -17,9 +17,10 @@ class MGMEvaluation:
         mgm_output_file = kwargs['mgm_output_file']
         threshold = kwargs['threshold']
         category = kwargs['category']
-        types = kwargs['types']
+        entity_set = kwargs['entity_set']
         tool = kwargs['tool']
-        type_match = kwargs['type_match']
+        type_match = kwargs['match_types']
+        ground_truth_entities = kwargs['ground_truth_entities']
         logger.info(f"{'*'*10} START PROCESSING {'*'*10}")
         logger.info(f"Ground Truth file: {ground_truth_file}")
         logger.info(f"MGM output file: {mgm_output_file}")
@@ -61,8 +62,8 @@ class MGMEvaluation:
                 case = 'all_entity_instances_tool_specified'
                 if category == 'NERUniqueEntityInstancesToolSpecified':
                     case = 'unique_entity_instances_tool_specified'
-                ner = NER(case)
-                scores, output_data = ner.evaluate(ground_truth_file, mgm_output_file, tool, types, type_match)
+                ner = NER(case, entity_set, ground_truth_entities)
+                scores, output_data = ner.evaluate(ground_truth_file, mgm_output_file, tool, type_match)
                 filename += '_'
                 resultFile = filename + 'comparison'
             self.generateScoringFile(scores, filename)
