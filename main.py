@@ -29,9 +29,16 @@ if __name__ == '__main__':
     print(args)
 
     if (args.threshold == None or args.threshold == '') and args.category in ['AudioSegmentationBySegments', 'ApplauseDetectionBySegments', 'ShotDetection']:
-        parser.error("-t requires for category {}".format(args.category))
+        parser.error("-t required for category {}".format(args.category))
 
     if args.category in ['NERAllEntityInstancesToolSpecified', 'NERUniqueEntityInstancesToolSpecified'] and (args.tool == None or args.tool == ''):
-        parser.error("--tool requires for category {}".format(args.category))
+        parser.error("--tool required for category {}".format(args.category))
+
+    if args.category in ['NERAllEntityInstancesMapped', 'NERUniqueEntityInstancesMapped']:
+        if (args.entity_set == None or args.entity_set == ''):
+            parser.error("--entity-set required for category {}".format(args.category))
+        
+        if (args.ground_truth_entities == None or args.ground_truth_entities == ''):
+            parser.error("--ground-truth-entities required for category {}".format(args.category))
     
     MGMEvaluation().process(**vars(args))
