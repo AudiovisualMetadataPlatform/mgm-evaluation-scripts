@@ -58,10 +58,14 @@ class MGMEvaluation:
                 scores, output_data = shot_detection.compareFiles(ground_truth_file, mgm_output_file, threshold)
                 filename += '_'
                 resultFile = filename + 'comparison'
-            elif category in ['NERAllEntityInstancesToolSpecified', 'NERUniqueEntityInstancesToolSpecified']:
+            elif category in ['NERAllEntityInstancesToolSpecified', 'NERUniqueEntityInstancesToolSpecified', 'NERAllEntityInstancesMapped', 'NERUniqueEntityInstancesMapped']:
                 case = 'all_entity_instances_tool_specified'
                 if category == 'NERUniqueEntityInstancesToolSpecified':
                     case = 'unique_entity_instances_tool_specified'
+                elif category == 'NERAllEntityInstancesMapped':
+                    case = 'all_entity_instances_mapped'
+                elif category == 'NERUniqueEntityInstancesMapped':
+                    case = 'unique_entity_instances_mapped'
                 ner = NER(case, entity_set, ground_truth_entities)
                 scores, output_data = ner.evaluate(ground_truth_file, mgm_output_file, tool, type_match)
                 filename += '_'

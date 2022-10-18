@@ -7,11 +7,13 @@ class UniqueEntityInstances():
         self.ground_truth_entities = ground_truth_entities
         self.type = type
 
-    def comparison(self, gt, mgm, tool, types, type_match=False):
+    def evaluate(self, gt, mgm, tool, types, type_match=False):
+        if self.type == 'tool_specified':
+            self.entity_set = tool
+            self.ground_truth_entities = tool
         gt = self.ground_truth_values(gt, types)
         mgm = self.mgm_output_values(mgm, types, tool)
-        if self.type == 'tool_specified':
-            return self.tool_specified_comparisons(gt, mgm, tool, types, type_match)
+        return self.comparisons(gt, mgm, tool, types, type_match)
 
     def ground_truth_values(self, filename, types):
         gt = readCSVFile(filename)
@@ -23,8 +25,11 @@ class UniqueEntityInstances():
             types = [t.upper() for t in types]
         for g in gt:
             #convert entity type to corresponding common entity type if entity_set selected is 'common'
-            if self.entity_set == 'common':
-                g['type'] = self.entity_keys[self.ground_truth_entities][g['type'].upper()]
+            try:
+                if self.entity_set == 'common':
+                    g['type'] = self.entity_keys[self.ground_truth_entities][g['type'].upper()]
+            except:
+                raise Exception("Ground Truth File is not in correct format.")
             #we only care about comparing entities that are in the list of types specified
             if g['type'] in types:
                 new_g = {}
@@ -48,7 +53,7 @@ class UniqueEntityInstances():
         for m in mgm:
             #convert entity type to corresponding common entity type if entity_set selected is 'common'
             if self.entity_set == 'common':
-                m['type'] = self.entity_keys[tool][m['type'].upper()]
+                m['type'] = self.entity_keys[self.entity_set][m['type'].upper()]
             #we only care about comparing entities that are in the list of types specified
             if m['type'] in types:
                 new_m = {}
@@ -62,7 +67,7 @@ class UniqueEntityInstances():
             u['mgm_count'] = u.pop('count')
         return unique_mgm
 
-    def tool_specified_comparisons(self, gt, mgm, tool, types, type_match=False):
+    def comparisons(self, gt, mgm, tool, types, type_match=False):
         """Takes the ground truth and MGM for a document and gets the confusion matrix based on tool selected and entity types specified"""
         true_pos = []
         false_neg = []

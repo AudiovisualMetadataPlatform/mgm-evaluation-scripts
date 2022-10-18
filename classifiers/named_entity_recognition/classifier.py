@@ -11,11 +11,15 @@ class Classifier():
             self.instance = AllEntityInstances(self.entity_keys, 'tool_specified', entity_set, ground_truth_entities)
         elif test_case == 'unique_entity_instances_tool_specified':
             self.instance = UniqueEntityInstances(self.entity_keys, 'tool_specified', entity_set, ground_truth_entities)
+        elif test_case == 'all_entity_instances_mapped':
+            self.instance = AllEntityInstances(self.entity_keys, 'mapped', entity_set, ground_truth_entities)
+        elif test_case == 'unique_entity_instances_mapped':
+            self.instance = UniqueEntityInstances(self.entity_keys, 'mapped', entity_set, ground_truth_entities)
         
 
     def evaluate(self, ground_truth_file, mgm_output_file, tool, type_match=False):
         types = []
-        comparisons = self.instance.comparison(ground_truth_file, mgm_output_file, tool, types, type_match)
+        comparisons = self.instance.evaluate(ground_truth_file, mgm_output_file, tool, types, type_match)
         scores = self.scores(comparisons)
         return scores, comparisons['tp'] + comparisons['fp'] + comparisons['fn']
 

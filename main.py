@@ -9,7 +9,9 @@ categories = [
     'ApplauseDetectionBySegments',
     'ShotDetection',
     'NERAllEntityInstancesToolSpecified',
-    'NERUniqueEntityInstancesToolSpecified'
+    'NERUniqueEntityInstancesToolSpecified',
+    'NERAllEntityInstancesMapped',
+    'NERUniqueEntityInstancesMapped'
     ]
 
 if __name__ == '__main__':
@@ -29,7 +31,7 @@ if __name__ == '__main__':
     if (args.threshold == None or args.threshold == '') and args.category in ['AudioSegmentationBySegments', 'ApplauseDetectionBySegments', 'ShotDetection']:
         parser.error("-t requires for category {}".format(args.category))
 
-    if args.category in ['NERAllEntityInstancesToolSpecified'] and (args.tool == None or args.tool == ''):
+    if args.category in ['NERAllEntityInstancesToolSpecified', 'NERUniqueEntityInstancesToolSpecified'] and (args.tool == None or args.tool == ''):
         parser.error("--tool requires for category {}".format(args.category))
     
     MGMEvaluation().process(**vars(args))

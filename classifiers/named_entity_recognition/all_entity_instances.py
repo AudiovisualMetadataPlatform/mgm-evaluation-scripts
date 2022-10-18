@@ -7,19 +7,24 @@ class AllEntityInstances():
         self.ground_truth_entities = ground_truth_entities
         self.type = type
 
-    def comparison(self, gt, mgm, tool, types, type_match=False):
+    def evaluate(self, gt, mgm, tool, types, type_match=False):
+        if self.type == 'tool_specified':
+            self.entity_set = tool
+            self.ground_truth_entities = tool
         gt = self.ground_truth_values(gt)
         mgm = self.mgm_output_values(mgm)
-        if self.type == 'tool_specified':
-            return self.tool_specified_comparisons(gt, mgm, tool, types, type_match)
+        return self.comparisons(gt, mgm, tool, types, type_match)
         
     def ground_truth_values(self, filename):
         gt = readCSVFile(filename)
         gt = [g for g in gt]
         for g in gt:
             #convert entity type to corresponding common entity type if entity_set selected is 'common'
-            if self.entity_set == 'common':
-                g['type'] = self.entity_keys[self.ground_truth_entities][g['type'].upper()]
+            try:
+                if self.entity_set == 'common':
+                    g['type'] = self.entity_keys[self.ground_truth_entities][g['type'].upper()]
+            except:
+                raise Exception("Ground Truth File is not in correct format.")
             #name type and text unique to gt
             g['gt_type'] = g.pop('type')
             g['gt_text'] = g.pop('text')
@@ -32,13 +37,11 @@ class AllEntityInstances():
             #convert entity type to corresponding common entity type if entity_set selected is 'common'
             if self.entity_set == 'common':
                 m['type'] = self.entity_keys[self.entity_set][m['type'].upper()]
-            #name type and text unique to mgm
-        for m in mgm:
             m['mgm_type'] = m.pop('type')
             m['mgm_text'] = m.pop('text')
         return mgm
 
-    def tool_specified_comparisons(self, gt, mgm, tool, types, type_match=False):
+    def comparisons(self, gt, mgm, tool, types, type_match=False):
         """Takes the ground truth and MGM for a document and gets the confusion matrix based on tool selected and entity types specified"""
         true_pos = []
         false_neg = []
