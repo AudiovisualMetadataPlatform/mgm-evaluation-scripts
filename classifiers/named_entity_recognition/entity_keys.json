@@ -1,0 +1,42 @@
+{
+    "common": {
+        "PERSON": "PERSON",
+        "ORG": "ORG",
+        "DATE": "DATE",
+        "LOCATION": "LOCATION",
+        "EVENT": "EVENT",
+        "CONCEPT": "CONCEPT",
+        "NUMBER": "NUMBER"
+    },
+    "spacy": {
+        "PERSON": "PERSON",
+        "ORG": "ORG",
+        "DATE": "DATE",
+        "FAC": "LOCATION",
+        "GPE": "LOCATION",
+        "LOC": "LOCATION",
+        "EVENT": "EVENT",
+        "LAW": "CONCEPT",
+        "WORK_OF_ART": "CONCEPT",
+        "NORP": "CONCEPT",
+        "PRODUCT": "CONCEPT",
+        "LANGUAGE": "CONCEPT",
+        "TIME": "DATE",
+        "PERCENT": "NUMBER",
+        "MONEY": "NUMBER",
+        "QUANTITY": "NUMBER",
+        "ORDINAL": "NUMBER",
+        "CARDINAL": "NUMBER"
+    },
+    "comprehend": {
+        "PERSON": "PERSON",
+        "ORGANIZATION": "ORG",
+        "LOCATION": "LOCATION",
+        "EVENT": "EVENT",
+        "TITLE": "CONCEPT",
+        "DATE": "DATE",
+        "OTHER": "CONCEPT",
+        "COMMERCIAL_ITEM": "CONCEPT",
+        "QUANTITY": "NUMBER"
+    }
+}
