@@ -53,7 +53,7 @@ class UniqueEntityInstances():
         for m in mgm:
             #convert entity type to corresponding common entity type if entity_set selected is 'common'
             if self.entity_set == 'common':
-                m['type'] = self.entity_keys[self.entity_set][m['type'].upper()]
+                m['type'] = self.entity_keys[tool][m['type'].upper()]
             #we only care about comparing entities that are in the list of types specified
             if m['type'] in types:
                 new_m = {}
