@@ -1,0 +1,93 @@
+{
+    "media": {
+        "filename": "/path/to/file.mp4",
+        "duration": 537.7
+    },
+    "shots": [
+        {
+            "type": "shot",
+            "start": 0.0,
+            "end": 4.75
+        },
+        {
+            "type": "shot",
+            "start": 4.791666,
+            "end": 6.041666
+        },
+        {
+            "type": "shot",
+            "start": 6.083333,
+            "end": 8.708333
+        },
+        {
+            "type": "shot",
+            "start": 8.75,
+            "end": 25.041666
+        },
+        {
+            "type": "shot",
+            "start": 25.375,
+            "end": 56.666666
+        },
+        {
+            "type": "shot",
+            "start": 57.0,
+            "end": 69.916666
+        },
+        {
+            "type": "shot",
+            "start": 69.958333,
+            "end": 90.875
+        },
+        {
+            "type": "shot",
+            "start": 91.166666,
+            "end": 263.208333
+        },
+        {
+            "type": "shot",
+            "start": 263.5,
+            "end": 278.583333
+        },
+        {
+            "type": "shot",
+            "start": 278.625,
+            "end": 295.0
+        },
+        {
+            "type": "shot",
+            "start": 295.333333,
+            "end": 383.083333
+        },
+        {
+            "type": "shot",
+            "start": 383.125,
+            "end": 416.833333
+        },
+        {
+            "type": "shot",
+            "start": 416.875,
+            "end": 513.25
+        },
+        {
+            "type": "shot",
+            "start": 513.291666,
+            "end": 521.25
+        },
+        {
+            "type": "shot",
+            "start": 521.291666,
+            "end": 527.333333
+        },
+        {
+            "type": "shot",
+            "start": 527.625,
+            "end": 532.666666
+        },
+        {
+            "type": "shot",
+            "start": 532.708333,
+            "end": 537.666666
+        }
+    ]
+}
