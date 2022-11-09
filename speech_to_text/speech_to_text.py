@@ -5,7 +5,7 @@ from classifier import Classifier as STT
 import traceback
 from amp.logging import *
 import logging
-from amp.file import * 
+from amp.file_handler import * 
 
 setup_logging('speech_to_text_evaluation', True)
 if __name__ == '__main__':

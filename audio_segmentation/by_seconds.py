@@ -1,22 +1,13 @@
-import sys
-import os, csv
 import math
-import classifiers.metrics
-from utils.helper import *
-from .parent import AudioSegmentation
+from helper import *
+from amp.time_convertor import *
+from amp.file_handler import *
+import logging
 
-class BySeconds(AudioSegmentation):
-    def __init__(self, type='AudioSegmentation'):
-        if type == 'AudioSegmentation':
-            labels= ['silence', 'speech', 'music', 'noise']
-        else:
-            labels= ['applause', 'non-applause']
-            
-        if 'applause' in labels:
-            logger.info("Evaluating Applause Detection By Seconds")
-        else:
-            logger.info("Evaluating Audio Segmentation By Seconds")
-        super().__init__('seconds', labels)
+class ASBySeconds():
+    def __init__(self, parent):
+        self.parent = parent
+        pass
 
     def labelBySecond(self, segments):
         new_list = []
@@ -41,7 +32,7 @@ class BySeconds(AudioSegmentation):
 
 
     def confusionMatrix(self, mgm, gdata):
-        logger.info("Generating confusion matrix")
+        logging.info("Generating confusion matrix")
         """Get true positives, false positives, and false negatives"""
         #True positives are counted for every gt second that matches one or more mgm second
         true_pos = []
@@ -82,14 +73,14 @@ class BySeconds(AudioSegmentation):
 
 
 
-    def compareFiles(self,ground_truth_file, mgm_output_file):
-        logger.info("Comparing ground truth and MGM output files")
+    def evaluate(self,ground_truth_file, mgm_output_file):
+        logging.info("Comparing ground truth and MGM output files")
         """Compare each mgm with the ground truth to get precision, recall, and f1 scores for each 
         and output a spreadsheet with confusion matrix results. Return scores as a dict."""
         all_scores = []
 
         #read in gt csv files
-        gt = csv.DictReader(open(ground_truth_file, 'r'))
+        gt = read_csv_file(ground_truth_file)
         #convert generator to list
         gt = [g for g in gt]
 
@@ -113,6 +104,6 @@ class BySeconds(AudioSegmentation):
             for k, v in sm.items():
                 if k in ['gt_second', 'mgm_second']:
                     sm[k] = convertSecondsToTimestamp(v)
-        scores = self.scoring(cf, gt, mgm)
+        scores = self.parent.scoring(cf, gt, mgm)
         return scores, sorted_mo
 

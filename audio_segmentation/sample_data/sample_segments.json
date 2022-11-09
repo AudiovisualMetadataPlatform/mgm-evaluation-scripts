@@ -1,0 +1,219 @@
+{
+    "segments": [
+        {
+            "label": "silence",
+            "gender": "",
+            "start": 0.0,
+            "end": 4.44,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 4.44,
+            "end": 29.7,
+            "speakerLabel": null
+        },
+        {
+            "label": "speech",
+            "gender": "male",
+            "start": 29.7,
+            "end": 34.08,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 34.08,
+            "end": 41.300000000000004,
+            "speakerLabel": null
+        },
+        {
+            "label": "speech",
+            "gender": "male",
+            "start": 41.300000000000004,
+            "end": 85.60000000000001,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 85.60000000000001,
+            "end": 205.64000000000001,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 205.64000000000001,
+            "end": 219.9,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 219.9,
+            "end": 246.5,
+            "speakerLabel": null
+        },
+        {
+            "label": "speech",
+            "gender": "male",
+            "start": 246.5,
+            "end": 248.78,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 248.78,
+            "end": 339.96,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 339.96,
+            "end": 419.34000000000003,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 419.34000000000003,
+            "end": 436.1,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 436.1,
+            "end": 443.24,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 443.24,
+            "end": 485.98,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 485.98,
+            "end": 488.64,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 488.64,
+            "end": 511.90000000000003,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 511.90000000000003,
+            "end": 542.9,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 542.9,
+            "end": 585.58,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 585.58,
+            "end": 829.82,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 829.82,
+            "end": 873.86,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 873.86,
+            "end": 1011.2,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 1011.2,
+            "end": 1057.24,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 1057.24,
+            "end": 1128.08,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 1128.08,
+            "end": 1161.82,
+            "speakerLabel": null
+        },
+        {
+            "label": "speech",
+            "gender": "male",
+            "start": 1161.82,
+            "end": 1169.66,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 1169.66,
+            "end": 1190.8,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 1190.8,
+            "end": 1377.06,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 1377.06,
+            "end": 1561.94,
+            "speakerLabel": null
+        },
+        {
+            "label": "music",
+            "gender": "",
+            "start": 1561.94,
+            "end": 1569.02,
+            "speakerLabel": null
+        },
+        {
+            "label": "noise",
+            "gender": "",
+            "start": 1569.02,
+            "end": 1695.58,
+            "speakerLabel": null
+        }
+    ],
+    "numSpeakers": 0,
+    "media": {
+        "duration": 1695.58,
+        "filename": "/path/to/file.dat"
+    }
+}

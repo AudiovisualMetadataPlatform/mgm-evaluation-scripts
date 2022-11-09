@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Tuple, Union
 from itertools import chain
 from jiwer import transforms as tr
 from jiwer.transformations import wer_default, wer_standardize, cer_default_transform
-from amp.file import *
+from amp.file_handler import *
 import logging
 
 class Classifier():
