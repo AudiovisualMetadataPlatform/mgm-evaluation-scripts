@@ -1,0 +1,93 @@
+{
+    "media": {
+        "filename": "path/to/file.dat",
+        "duration": 1947.16
+    },
+    "segments": [
+        {
+            "label": "non-applause",
+            "start": 0.0,
+            "end": 10.29
+        },
+        {
+            "label": "applause",
+            "start": 10.3,
+            "end": 12.87
+        },
+        {
+            "label": "non-applause",
+            "start": 12.88,
+            "end": 79.06
+        },
+        {
+            "label": "applause",
+            "start": 79.07,
+            "end": 93.75
+        },
+        {
+            "label": "non-applause",
+            "start": 93.76,
+            "end": 195.59
+        },
+        {
+            "label": "applause",
+            "start": 195.6,
+            "end": 203.18
+        },
+        {
+            "label": "non-applause",
+            "start": 203.19,
+            "end": 470.49
+        },
+        {
+            "label": "applause",
+            "start": 470.5,
+            "end": 474.8
+        },
+        {
+            "label": "non-applause",
+            "start": 474.81,
+            "end": 513.37
+        },
+        {
+            "label": "applause",
+            "start": 513.38,
+            "end": 518.32
+        },
+        {
+            "label": "non-applause",
+            "start": 518.33,
+            "end": 553.33
+        },
+        {
+            "label": "applause",
+            "start": 553.34,
+            "end": 556.79
+        },
+        {
+            "label": "non-applause",
+            "start": 556.8,
+            "end": 599.88
+        },
+        {
+            "label": "applause",
+            "start": 599.89,
+            "end": 602.13
+        },
+        {
+            "label": "non-applause",
+            "start": 602.14,
+            "end": 607.73
+        },
+        {
+            "label": "applause",
+            "start": 607.74,
+            "end": 619.47
+        },
+        {
+            "label": "non-applause",
+            "start": 619.48,
+            "end": 1947.16
+        }
+    ]
+}

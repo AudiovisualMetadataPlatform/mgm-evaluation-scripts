@@ -4,9 +4,9 @@ from amp.time_convertor import *
 from amp.file_handler import *
 import logging
 
-class ASBySeconds():
+class ADBySeconds():
     def __init__(self, parent):
-        logging.info("Evaluating Audio Segmentation By Seconds")
+        logging.info("Evaluating Applause Detection By Seconds")
         self.parent = parent
         pass
 
