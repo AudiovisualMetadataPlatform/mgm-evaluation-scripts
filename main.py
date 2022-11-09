@@ -7,7 +7,11 @@ categories = [
     'SpeechToText', 
     'ApplauseDetectionBySeconds', 
     'ApplauseDetectionBySegments',
-    'ShotDetection'
+    'ShotDetection',
+    'NERAllEntityInstancesToolSpecified',
+    'NERUniqueEntityInstancesToolSpecified',
+    'NERAllEntityInstancesMapped',
+    'NERUniqueEntityInstancesMapped'
     ]
 
 if __name__ == '__main__':
@@ -16,9 +20,25 @@ if __name__ == '__main__':
     parser.add_argument("-m", "--mgm-output-file", type=str, required=True, help="MGM output file path.")
     parser.add_argument("-t", "--threshold", type=int, help="Threshold value.")
     parser.add_argument("-c", "--category", type=str,  required=True, help="Evaluation Category.", choices=categories)
+    parser.add_argument("--entity-set", type=str, help="Entity set of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
+    parser.add_argument("--ground-truth-entities", type=str, help="Ground truth entities of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
+    parser.add_argument("--tool", type=str, help="MGM Tool used Named Entity Recognition output.", choices=['spacy', 'comprehend'])
+    parser.add_argument("--match-types", type=bool, help="Entity or Entity type should match", default=False)
+
     args = parser.parse_args()
+    print(args)
 
     if (args.threshold == None or args.threshold == '') and args.category in ['AudioSegmentationBySegments', 'ApplauseDetectionBySegments', 'ShotDetection']:
-        parser.error("-t requires for category {}".format(args.category))
+        parser.error("-t required for category {}".format(args.category))
+
+    if args.category in ['NERAllEntityInstancesToolSpecified', 'NERUniqueEntityInstancesToolSpecified'] and (args.tool == None or args.tool == ''):
+        parser.error("--tool required for category {}".format(args.category))
+
+    if args.category in ['NERAllEntityInstancesMapped', 'NERUniqueEntityInstancesMapped']:
+        if (args.entity_set == None or args.entity_set == ''):
+            parser.error("--entity-set required for category {}".format(args.category))
+        
+        if (args.ground_truth_entities == None or args.ground_truth_entities == ''):
+            parser.error("--ground-truth-entities required for category {}".format(args.category))
     
-    MGMEvaluation().process(args.ground_truth_file,args.mgm_output_file, args.threshold, args.category)
+    MGMEvaluation().process(**vars(args))

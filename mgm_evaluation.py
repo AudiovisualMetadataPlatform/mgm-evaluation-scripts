@@ -3,6 +3,7 @@ from classifiers.audio_segmentation.by_seconds import BySeconds as ASBySeconds
 from classifiers.applause_detection.by_segments import BySegments as ADBySegments
 from classifiers.applause_detection.by_seconds import BySeconds as ADBySeconds
 from classifiers.shot_detection.classifier import Classifier as ShotDetection
+from classifiers.named_entity_recognition.classifier import Classifier as NER
 from utils.helper import writeToCsv, fileName
 import traceback
 from utils.helper import logger
@@ -10,7 +11,15 @@ from utils.helper import logger
 
 class MGMEvaluation:
 
-    def process(self, ground_truth_file,mgm_output_file, threshold, category):
+    def process(self, **kwargs):
+        ground_truth_file = kwargs['ground_truth_file']
+        mgm_output_file = kwargs['mgm_output_file']
+        threshold = kwargs['threshold']
+        category = kwargs['category']
+        entity_set = kwargs['entity_set']
+        tool = kwargs['tool']
+        type_match = kwargs['match_types']
+        ground_truth_entities = kwargs['ground_truth_entities']
         logger.info(f"{'*'*10} START PROCESSING {'*'*10}")
         logger.info(f"Ground Truth file: {ground_truth_file}")
         logger.info(f"MGM output file: {mgm_output_file}")
@@ -42,6 +51,18 @@ class MGMEvaluation:
             elif category == 'ShotDetection':
                 shot_detection = ShotDetection()
                 scores, output_data = shot_detection.compareFiles(ground_truth_file, mgm_output_file, threshold)
+                filename += '_'
+                resultFile = filename + 'comparison'
+            elif category in ['NERAllEntityInstancesToolSpecified', 'NERUniqueEntityInstancesToolSpecified', 'NERAllEntityInstancesMapped', 'NERUniqueEntityInstancesMapped']:
+                case = 'all_entity_instances_tool_specified'
+                if category == 'NERUniqueEntityInstancesToolSpecified':
+                    case = 'unique_entity_instances_tool_specified'
+                elif category == 'NERAllEntityInstancesMapped':
+                    case = 'all_entity_instances_mapped'
+                elif category == 'NERUniqueEntityInstancesMapped':
+                    case = 'unique_entity_instances_mapped'
+                ner = NER(case, entity_set, ground_truth_entities)
+                scores, output_data = ner.evaluate(ground_truth_file, mgm_output_file, tool, type_match)
                 filename += '_'
                 resultFile = filename + 'comparison'
             self.generateScoringFile(scores, filename)
