@@ -5,14 +5,16 @@ from typing import Any, Dict, List, Tuple, Union
 from itertools import chain
 from jiwer import transforms as tr
 from jiwer.transformations import wer_default, wer_standardize, cer_default_transform
+from amp.file import *
+import logging
 
 class Classifier():
     def __init__(self):
-        logger.info("Evaluating Speech To Text")
+        logging.info("Evaluating Speech To Text")
         self.metrics = metrics.Metrics()
 
     def evaluate(self, ground_truth_file, mgm_output_file):
-        transcript = readFile(ground_truth_file)
+        transcript = read_text_file(ground_truth_file)
         normalized_gt = normalize(transcript)
         mgm = json.load(open(mgm_output_file, 'r'))
         transcript = mgm["results"]["transcript"]
@@ -23,7 +25,7 @@ class Classifier():
         return scores, output_list
 
     def generate_comparison_list(self, normalized_gt, normalized_mgm):
-        logger.info("Generating list")
+        logging.info("Generating list")
         #preprocess texts
         tc, hc = self._preprocess(normalized_gt, normalized_mgm, wer_standardize, wer_standardize)
 
@@ -68,7 +70,7 @@ class Classifier():
 
 
     def scoring(self, normalized_gt, normalized_mgm, error_rates):
-        logger.info("Preparing scores")
+        logging.info("Preparing scores")
         wer = self.metrics.wordErrorRate(normalized_gt,normalized_mgm)
         return {
             "word_error_rate": wer,
@@ -96,7 +98,7 @@ class Classifier():
         :param hypothesis_transform: the transformation to apply on the hypothesis input
         :return: the preprocessed truth and hypothesis
         """
-        logger.info("Preprocessing data")
+        logging.info("Preprocessing data")
         # Apply transforms. The transforms should collapses input to a list of list of words
         transformed_truth = truth_transform(truth)
         transformed_hypothesis = hypothesis_transform(hypothesis)

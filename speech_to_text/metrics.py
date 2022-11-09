@@ -1,5 +1,4 @@
-from helper import *
-import jiwer
+import jiwer, logging
 
 class Metrics():
 
@@ -7,33 +6,33 @@ class Metrics():
         pass
 
     def wordErrorRate(self, gt, predicted):
-        logger.info("Calculating word Error Rate")
+        logging.info("Calculating word Error Rate")
         return jiwer.wer(gt, predicted)
     
     def matchErrorRate(self, gt, predicted):
-        logger.info("Calculating match Error Rate")
+        logging.info("Calculating match Error Rate")
         return jiwer.mer(gt, predicted)
 
     def wordInfoLoss(self, gt, predicted):
-        logger.info("Calculating word Info Loss")
+        logging.info("Calculating word Info Loss")
         return jiwer.wil(gt, predicted)
 
     def wordInfoProcessed(self, gt, predicted):
-        logger.info("Calculating word Info Processed")
+        logging.info("Calculating word Info Processed")
         return jiwer.wip(gt, predicted)
 
     def characterErrorRate(self, gt, predicted):
-        logger.info("Calculating character Error Rate")
+        logging.info("Calculating character Error Rate")
         return jiwer.cer(gt, predicted)
 
     def substitutionErrorRate(self, wer, substitution_prop):
-        logger.info("Calculating Substitution Error Rate")
+        logging.info("Calculating Substitution Error Rate")
         return wer*substitution_prop
 
     def deletionErrorRate(self, wer, deletion_prop):
-        logger.info("Calculating Deletion Error Rate")
+        logging.info("Calculating Deletion Error Rate")
         return wer*deletion_prop
 
     def insertionErrorRate(self, wer, insertion_prop):
-        logger.info("Calculating Insertion Error Rate")
+        logging.info("Calculating Insertion Error Rate")
         return wer*insertion_prop
