@@ -1,0 +1,965 @@
+{
+    "media": {
+        "characters": 10875,
+        "filename": "path/to/file.dat"
+    },
+    "entities": [
+        {
+            "type": "DATE",
+            "text": "today",
+            "beginOffset": 0,
+            "endOffset": 5,
+            "start": 11.63,
+            "score": {
+                "type": "relevance",
+                "value": 0.9607867520211916
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "americans",
+            "beginOffset": 39,
+            "endOffset": 48,
+            "start": 13.39,
+            "score": {
+                "type": "relevance",
+                "value": 0.7702132421346726
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "juneteenth",
+            "beginOffset": 111,
+            "endOffset": 121,
+            "start": 17.22,
+            "score": {
+                "type": "relevance",
+                "value": 0.6021519354706104
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "african americans",
+            "beginOffset": 162,
+            "endOffset": 179,
+            "start": 20.59,
+            "score": {
+                "type": "relevance",
+                "value": 0.5154104762795794
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "juneteenth",
+            "beginOffset": 194,
+            "endOffset": 204,
+            "start": 22.62,
+            "score": {
+                "type": "relevance",
+                "value": 0.5615482041362572
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 233,
+            "endOffset": 238,
+            "start": 24.56,
+            "score": {
+                "type": "relevance",
+                "value": 0.9982635186655328
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "a decade",
+            "beginOffset": 243,
+            "endOffset": 251,
+            "start": 25.12,
+            "score": {
+                "type": "relevance",
+                "value": 0.9475555419477568
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "William H Wiggins Jr",
+            "beginOffset": 431,
+            "endOffset": 451,
+            "start": 35.8,
+            "score": {
+                "type": "relevance",
+                "value": 0.9993673267296108
+            }
+        },
+        {
+            "type": "TITLE",
+            "text": "oh freedom",
+            "beginOffset": 469,
+            "endOffset": 479,
+            "start": 38.48,
+            "score": {
+                "type": "relevance",
+                "value": 0.9727577916522415
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "african american",
+            "beginOffset": 491,
+            "endOffset": 507,
+            "start": 39.88,
+            "score": {
+                "type": "relevance",
+                "value": 0.8291001291194892
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "afro american",
+            "beginOffset": 565,
+            "endOffset": 578,
+            "start": 44.12,
+            "score": {
+                "type": "relevance",
+                "value": 0.9280998029983479
+            }
+        },
+        {
+            "type": "ORGANIZATION",
+            "text": "indiana University",
+            "beginOffset": 590,
+            "endOffset": 608,
+            "start": 45.5,
+            "score": {
+                "type": "relevance",
+                "value": 0.9887443768210417
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "juneteenth",
+            "beginOffset": 686,
+            "endOffset": 696,
+            "start": 50.85,
+            "score": {
+                "type": "relevance",
+                "value": 0.8278095400743148
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "juneteenth",
+            "beginOffset": 698,
+            "endOffset": 708,
+            "start": 51.91,
+            "score": {
+                "type": "relevance",
+                "value": 0.8794239675953752
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "18 65 june 19",
+            "beginOffset": 735,
+            "endOffset": 748,
+            "start": 55.8,
+            "score": {
+                "type": "relevance",
+                "value": 0.8999722586414749
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "General",
+            "beginOffset": 754,
+            "endOffset": 761,
+            "start": 58.32,
+            "score": {
+                "type": "relevance",
+                "value": 0.9546417569400222
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Gordon Granger",
+            "beginOffset": 762,
+            "endOffset": 776,
+            "start": 58.69,
+            "score": {
+                "type": "relevance",
+                "value": 0.9635246517722754
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Galveston texas",
+            "beginOffset": 804,
+            "endOffset": 819,
+            "start": 62.91,
+            "score": {
+                "type": "relevance",
+                "value": 0.9699107757349291
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "east texas",
+            "beginOffset": 848,
+            "endOffset": 858,
+            "start": 66.0,
+            "score": {
+                "type": "relevance",
+                "value": 0.9471503832473078
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "one time event",
+            "beginOffset": 934,
+            "endOffset": 948,
+            "start": 73.14,
+            "score": {
+                "type": "relevance",
+                "value": 0.9154347885448999
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 1040,
+            "endOffset": 1045,
+            "start": 80.16,
+            "score": {
+                "type": "relevance",
+                "value": 0.9973106189074742
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 1055,
+            "endOffset": 1060,
+            "start": 82.06,
+            "score": {
+                "type": "relevance",
+                "value": 0.9988772375826043
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "east texas",
+            "beginOffset": 1062,
+            "endOffset": 1072,
+            "start": 82.57,
+            "score": {
+                "type": "relevance",
+                "value": 0.9393528106174792
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "western Louisiana",
+            "beginOffset": 1074,
+            "endOffset": 1091,
+            "start": 83.73,
+            "score": {
+                "type": "relevance",
+                "value": 0.978041455849519
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "southwest Arkansas",
+            "beginOffset": 1093,
+            "endOffset": 1111,
+            "start": 85.78,
+            "score": {
+                "type": "relevance",
+                "value": 0.9595347422326806
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "southern Oklahoma",
+            "beginOffset": 1116,
+            "endOffset": 1133,
+            "start": 87.67,
+            "score": {
+                "type": "relevance",
+                "value": 0.9813854679887406
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "tom Bradley",
+            "beginOffset": 1241,
+            "endOffset": 1252,
+            "start": 98.92,
+            "score": {
+                "type": "relevance",
+                "value": 0.8976197123230302
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "johnny Mathis",
+            "beginOffset": 1263,
+            "endOffset": 1276,
+            "start": 99.97,
+            "score": {
+                "type": "relevance",
+                "value": 0.9815284313640776
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "California",
+            "beginOffset": 1301,
+            "endOffset": 1311,
+            "start": 102.44,
+            "score": {
+                "type": "relevance",
+                "value": 0.99924835478265
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Oakland",
+            "beginOffset": 1350,
+            "endOffset": 1357,
+            "start": 107.34,
+            "score": {
+                "type": "relevance",
+                "value": 0.999810612317527
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Los Angeles",
+            "beginOffset": 1359,
+            "endOffset": 1370,
+            "start": 108.16,
+            "score": {
+                "type": "relevance",
+                "value": 0.9994364118296923
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Richmond California",
+            "beginOffset": 1372,
+            "endOffset": 1391,
+            "start": 109.5,
+            "score": {
+                "type": "relevance",
+                "value": 0.9896658818974974
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Texans",
+            "beginOffset": 1429,
+            "endOffset": 1435,
+            "start": 113.02,
+            "score": {
+                "type": "relevance",
+                "value": 0.7303339890444716
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 1465,
+            "endOffset": 1470,
+            "start": 114.63,
+            "score": {
+                "type": "relevance",
+                "value": 0.9979055968958122
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "January one",
+            "beginOffset": 1665,
+            "endOffset": 1676,
+            "start": 126.95,
+            "score": {
+                "type": "relevance",
+                "value": 0.9857442169482099
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "1863",
+            "beginOffset": 1733,
+            "endOffset": 1737,
+            "start": 130.83,
+            "score": {
+                "type": "relevance",
+                "value": 0.9720727786486418
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "first",
+            "beginOffset": 1869,
+            "endOffset": 1874,
+            "start": 140.54,
+            "score": {
+                "type": "relevance",
+                "value": 0.9838608328976823
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "February one",
+            "beginOffset": 1924,
+            "endOffset": 1936,
+            "start": 143.82,
+            "score": {
+                "type": "relevance",
+                "value": 0.9910184208239108
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "Philadelphia National Freedom Day",
+            "beginOffset": 1961,
+            "endOffset": 1994,
+            "start": 146.16,
+            "score": {
+                "type": "relevance",
+                "value": 0.9911731351101124
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "President",
+            "beginOffset": 2038,
+            "endOffset": 2047,
+            "start": 151.98,
+            "score": {
+                "type": "relevance",
+                "value": 0.992217430019143
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Truman",
+            "beginOffset": 2048,
+            "endOffset": 2054,
+            "start": 152.81,
+            "score": {
+                "type": "relevance",
+                "value": 0.9775063970497511
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "13th amendment",
+            "beginOffset": 2115,
+            "endOffset": 2129,
+            "start": 156.95,
+            "score": {
+                "type": "relevance",
+                "value": 0.7766957697109567
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "first official day",
+            "beginOffset": 2147,
+            "endOffset": 2165,
+            "start": 159.17,
+            "score": {
+                "type": "relevance",
+                "value": 0.9063604891955658
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "martin",
+            "beginOffset": 2276,
+            "endOffset": 2282,
+            "start": 170.04,
+            "score": {
+                "type": "relevance",
+                "value": 0.5729261625828912
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Luther",
+            "beginOffset": 2283,
+            "endOffset": 2289,
+            "start": 170.32,
+            "score": {
+                "type": "relevance",
+                "value": 0.505311457534226
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "king",
+            "beginOffset": 2290,
+            "endOffset": 2294,
+            "start": 170.49,
+            "score": {
+                "type": "relevance",
+                "value": 0.6013180464451144
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Jr",
+            "beginOffset": 2295,
+            "endOffset": 2297,
+            "start": 170.77,
+            "score": {
+                "type": "relevance",
+                "value": 0.7275528594466847
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "juneteenth",
+            "beginOffset": 2375,
+            "endOffset": 2385,
+            "start": 176.06,
+            "score": {
+                "type": "relevance",
+                "value": 0.9567121397555384
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "three",
+            "beginOffset": 2436,
+            "endOffset": 2441,
+            "start": 182.28,
+            "score": {
+                "type": "relevance",
+                "value": 0.9583914826236232
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "american",
+            "beginOffset": 2571,
+            "endOffset": 2579,
+            "start": 193.87,
+            "score": {
+                "type": "relevance",
+                "value": 0.6986363153293932
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "july 4th",
+            "beginOffset": 2588,
+            "endOffset": 2596,
+            "start": 195.19,
+            "score": {
+                "type": "relevance",
+                "value": 0.9383433387141102
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "one",
+            "beginOffset": 3259,
+            "endOffset": 3262,
+            "start": 239.38,
+            "score": {
+                "type": "relevance",
+                "value": 0.947089234345277
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "two",
+            "beginOffset": 3281,
+            "endOffset": 3284,
+            "start": 240.55,
+            "score": {
+                "type": "relevance",
+                "value": 0.9980997263889081
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "two",
+            "beginOffset": 3449,
+            "endOffset": 3452,
+            "start": 252.52,
+            "score": {
+                "type": "relevance",
+                "value": 0.9989427787883692
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Lincoln",
+            "beginOffset": 3500,
+            "endOffset": 3507,
+            "start": 257.69,
+            "score": {
+                "type": "relevance",
+                "value": 0.997746312923585
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "18 63",
+            "beginOffset": 3522,
+            "endOffset": 3527,
+            "start": 259.48,
+            "score": {
+                "type": "relevance",
+                "value": 0.9960156470250046
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "january",
+            "beginOffset": 3528,
+            "endOffset": 3535,
+            "start": 260.34,
+            "score": {
+                "type": "relevance",
+                "value": 0.7242473515227863
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "one",
+            "beginOffset": 3536,
+            "endOffset": 3539,
+            "start": 260.79,
+            "score": {
+                "type": "relevance",
+                "value": 0.7725836380267634
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Gordon Granger",
+            "beginOffset": 3588,
+            "endOffset": 3602,
+            "start": 266.92,
+            "score": {
+                "type": "relevance",
+                "value": 0.999533380863306
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 3623,
+            "endOffset": 3628,
+            "start": 269.86,
+            "score": {
+                "type": "relevance",
+                "value": 0.9964035621646229
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 3880,
+            "endOffset": 3885,
+            "start": 285.81,
+            "score": {
+                "type": "relevance",
+                "value": 0.9981931966028618
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 3986,
+            "endOffset": 3991,
+            "start": 293.14,
+            "score": {
+                "type": "relevance",
+                "value": 0.9936674285054207
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Dominion",
+            "beginOffset": 4110,
+            "endOffset": 4118,
+            "start": 301.92,
+            "score": {
+                "type": "relevance",
+                "value": 0.959203531089209
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Virginia",
+            "beginOffset": 4139,
+            "endOffset": 4147,
+            "start": 304.25,
+            "score": {
+                "type": "relevance",
+                "value": 0.990344486610295
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "Carolinas Georgia",
+            "beginOffset": 4153,
+            "endOffset": 4170,
+            "start": 304.83,
+            "score": {
+                "type": "relevance",
+                "value": 0.9880877361062084
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "texas",
+            "beginOffset": 4190,
+            "endOffset": 4195,
+            "start": 308.73,
+            "score": {
+                "type": "relevance",
+                "value": 0.9974461616887317
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "dr",
+            "beginOffset": 4718,
+            "endOffset": 4720,
+            "start": 339.15,
+            "score": {
+                "type": "relevance",
+                "value": 0.6631597535505813
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "king",
+            "beginOffset": 4721,
+            "endOffset": 4725,
+            "start": 339.46,
+            "score": {
+                "type": "relevance",
+                "value": 0.7325525508644924
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "afro american",
+            "beginOffset": 4736,
+            "endOffset": 4749,
+            "start": 340.88,
+            "score": {
+                "type": "relevance",
+                "value": 0.8820248271975665
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "american",
+            "beginOffset": 4780,
+            "endOffset": 4788,
+            "start": 343.46,
+            "score": {
+                "type": "relevance",
+                "value": 0.8702974210705743
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "World War",
+            "beginOffset": 4964,
+            "endOffset": 4973,
+            "start": 357.11,
+            "score": {
+                "type": "relevance",
+                "value": 0.9972260634916317
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "World War Two",
+            "beginOffset": 4995,
+            "endOffset": 5008,
+            "start": 358.49,
+            "score": {
+                "type": "relevance",
+                "value": 0.9978143173000732
+            }
+        },
+        {
+            "type": "QUANTITY",
+            "text": "double V",
+            "beginOffset": 5045,
+            "endOffset": 5053,
+            "start": 362.25,
+            "score": {
+                "type": "relevance",
+                "value": 0.7104590541949601
+            }
+        },
+        {
+            "type": "LOCATION",
+            "text": "America",
+            "beginOffset": 5111,
+            "endOffset": 5118,
+            "start": 366.45,
+            "score": {
+                "type": "relevance",
+                "value": 0.5353570854592229
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "american",
+            "beginOffset": 5128,
+            "endOffset": 5136,
+            "start": 367.27,
+            "score": {
+                "type": "relevance",
+                "value": 0.7875109905712012
+            }
+        },
+        {
+            "type": "DATE",
+            "text": "july 4th",
+            "beginOffset": 5158,
+            "endOffset": 5166,
+            "start": 369.55,
+            "score": {
+                "type": "relevance",
+                "value": 0.7470099843151696
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "american",
+            "beginOffset": 5171,
+            "endOffset": 5179,
+            "start": 370.64,
+            "score": {
+                "type": "relevance",
+                "value": 0.639561235935167
+            }
+        },
+        {
+            "type": "EVENT",
+            "text": "day",
+            "beginOffset": 5180,
+            "endOffset": 5183,
+            "start": 371.07,
+            "score": {
+                "type": "relevance",
+                "value": 0.5224187896659341
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "african american",
+            "beginOffset": 5254,
+            "endOffset": 5270,
+            "start": 377.29,
+            "score": {
+                "type": "relevance",
+                "value": 0.9470567835621463
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "african american",
+            "beginOffset": 5271,
+            "endOffset": 5287,
+            "start": 378.19,
+            "score": {
+                "type": "relevance",
+                "value": 0.7435388573071432
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "african american",
+            "beginOffset": 5421,
+            "endOffset": 5437,
+            "start": 387.87,
+            "score": {
+                "type": "relevance",
+                "value": 0.9015678279454222
+            }
+        },
+        {
+            "type": "OTHER",
+            "text": "afro american",
+            "beginOffset": 5466,
+            "endOffset": 5479,
+            "start": 390.27,
+            "score": {
+                "type": "relevance",
+                "value": 0.8520623164538085
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Professor",
+            "beginOffset": 5509,
+            "endOffset": 5518,
+            "start": 393.65,
+            "score": {
+                "type": "relevance",
+                "value": 0.9492849467287238
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Wiggins",
+            "beginOffset": 5519,
+            "endOffset": 5526,
+            "start": 394.06,
+            "score": {
+                "type": "relevance",
+                "value": 0.9959702224444287
+            }
+        },
+        {
+            "type": "ORGANIZATION",
+            "text": "Nightwatch",
+            "beginOffset": 5543,
+            "endOffset": 5553,
+            "start": 395.5,
+            "score": {
+                "type": "relevance",
+                "value": 0.5440062678744525
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "Professor",
+            "beginOffset": 5580,
+            "endOffset": 5589,
+            "start": 554.14,
+            "score": {
+                "type": "relevance",
+                "value": 0.8131016582894546
+            }
+        },
+        {
+            "type": "PERSON",
+            "text": "William H Wiggins",
+            "beginOffset": 5590,
+            "endOffset": 5607,
+            "start": 554.7,
+            "score": {
+                "type": "relevance",
+                "value": 0.997307852001509
+            }
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+text,type,beginOffset,endOffset
+americans,NORP,39,48
+juneteenth,EVENT,111,121
+african americans,NORP,162,179
+juneteenth,EVENT,194,204
+texas,GPE,233,238
+William H Wiggins Jr,PERSON,431,451
+african american,NORP,491,507
+american,NORP,570,578
+indiana University,ORG,590,608
+juneteenth,EVENT,686,696
+juneteenth,EVENT,698,708
+18 65 june 19,DATE,735,748
+Gordon Granger,PERSON,762,776
+Galveston,GPE,804,813
+texas,GPE,814,819
+texas,GPE,853,858
+texas,GPE,1040,1045
+texas,GPE,1055,1060
+texas,GPE,1067,1072
+Louisiana,GPE,1082,1091
+Arkansas,GPE,1103,1111
+Oklahoma,GPE,1125,1133
+om Bradley's,PERSON,1242,1254
+johnny Mathis's,PERSON,1263,1278
+California,GPE,1301,1311
+Oakland,GPE,1350,1357
+Los Angeles,GPE,1359,1370
+Richmond,GPE,1372,1380
+California,GPE,1381,1391
+texas,GPE,1465,1470
+January one,DATE,1665,1676
+emancipation proclamation,WORK_OF_ART,1706,1731
+1863,DATE,1733,1737
+February one,DATE,1924,1936
+Philadelphia,GPE,1961,1973
+National Freedom Day,EVENT,1974,1994
+Truman,PERSON,2048,2054
+13th amendment,LAW,2115,2129
+martin Luther king Jr national holiday,EVENT,2276,2314
+juneteenth,EVENT,2375,2385
+american,NORP,2571,2579
+july 4th,DATE,2588,2596
+emancipation proclamation,WORK_OF_ART,2923,2948
+emancipation proclamation,WORK_OF_ART,3069,3094
+emancipation proclamation,WORK_OF_ART,3467,3492
+18 63 january one,DATE,3522,3539
+Gordon Granger,PERSON,3588,3602
+texas,GPE,3623,3628
+texas,GPE,3880,3885
+texas,GPE,3986,3991
+Dominion,GPE,4110,4118
+Virginia,GPE,4139,4147
+Carolinas,GPE,4153,4162
+Georgia,GPE,4163,4170
+texas,GPE,4190,4195
+emancipation proclamation,WORK_OF_ART,4449,4474
+king,PERSON,4721,4725
+american,NORP,4741,4749
+american,NORP,4780,4788
+World War,EVENT,4964,4973
+World War Two,EVENT,4995,5008
+double V campaign,EVENT,5045,5062
+America,GPE,5111,5118
+american,NORP,5128,5136
+july 4th,DATE,5158,5166
+american,NORP,5171,5179
+african american,NORP,5254,5270
+african american,NORP,5271,5287
+african american,NORP,5421,5437
+american,NORP,5471,5479
+Wiggins,PERSON,5519,5526
+Nightwatch,WORK_OF_ART,5543,5553

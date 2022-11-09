@@ -1,0 +1,568 @@
+{
+    "media": {
+        "characters": 10875,
+        "filename": "path/to/file.dat"
+    },
+    "entities": [
+        {
+            "type": "DATE",
+            "text": "today",
+            "beginOffset": 0,
+            "endOffset": 5,
+            "start": 11.63,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "a day",
+            "beginOffset": 9,
+            "endOffset": 14,
+            "start": 12.1,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "americans",
+            "beginOffset": 39,
+            "endOffset": 48,
+            "start": 13.39,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "this unofficial holiday",
+            "beginOffset": 74,
+            "endOffset": 97,
+            "start": 15.06,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "african americans",
+            "beginOffset": 162,
+            "endOffset": 179,
+            "start": 20.59,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "juneteenth",
+            "beginOffset": 194,
+            "endOffset": 204,
+            "start": 22.62,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 233,
+            "endOffset": 238,
+            "start": 24.56,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "a decade",
+            "beginOffset": 243,
+            "endOffset": 251,
+            "start": 25.12,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "William H Wiggins Jr",
+            "beginOffset": 431,
+            "endOffset": 451,
+            "start": 35.8,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "african american emancipation celebrations",
+            "beginOffset": 491,
+            "endOffset": 533,
+            "start": 39.88,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "american",
+            "beginOffset": 570,
+            "endOffset": 578,
+            "start": 44.49,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "indiana University",
+            "beginOffset": 590,
+            "endOffset": 608,
+            "start": 45.5,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "18 65 june 19",
+            "beginOffset": 735,
+            "endOffset": 748,
+            "start": 55.8,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "Gordon Granger",
+            "beginOffset": 762,
+            "endOffset": 776,
+            "start": 58.69,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Galveston",
+            "beginOffset": 804,
+            "endOffset": 813,
+            "start": 62.91,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 853,
+            "endOffset": 858,
+            "start": 66.32,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 1040,
+            "endOffset": 1045,
+            "start": 80.16,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 1055,
+            "endOffset": 1060,
+            "start": 82.06,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "east texas",
+            "beginOffset": 1062,
+            "endOffset": 1072,
+            "start": 82.57,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Louisiana",
+            "beginOffset": 1082,
+            "endOffset": 1091,
+            "start": 84.84,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Arkansas",
+            "beginOffset": 1103,
+            "endOffset": 1111,
+            "start": 86.73,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Oklahoma",
+            "beginOffset": 1125,
+            "endOffset": 1133,
+            "start": 87.96,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "tom Bradley's",
+            "beginOffset": 1241,
+            "endOffset": 1254,
+            "start": 98.92,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "the johnny Mathis's",
+            "beginOffset": 1259,
+            "endOffset": 1278,
+            "start": 99.87,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "California",
+            "beginOffset": 1301,
+            "endOffset": 1311,
+            "start": 102.44,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Oakland",
+            "beginOffset": 1350,
+            "endOffset": 1357,
+            "start": 107.34,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Los Angeles",
+            "beginOffset": 1359,
+            "endOffset": 1370,
+            "start": 108.16,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Richmond",
+            "beginOffset": 1372,
+            "endOffset": 1380,
+            "start": 109.5,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "California",
+            "beginOffset": 1381,
+            "endOffset": 1391,
+            "start": 110.61,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "Texans",
+            "beginOffset": 1429,
+            "endOffset": 1435,
+            "start": 113.02,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 1465,
+            "endOffset": 1470,
+            "start": 114.63,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "holiday",
+            "beginOffset": 1559,
+            "endOffset": 1566,
+            "start": 118.92,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "January one",
+            "beginOffset": 1665,
+            "endOffset": 1676,
+            "start": 126.95,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "1863",
+            "beginOffset": 1733,
+            "endOffset": 1737,
+            "start": 130.83,
+            "score": null
+        },
+        {
+            "type": "ORDINAL",
+            "text": "first",
+            "beginOffset": 1869,
+            "endOffset": 1874,
+            "start": 140.54,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "February one",
+            "beginOffset": 1924,
+            "endOffset": 1936,
+            "start": 143.82,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "Philadelphia National Freedom Day",
+            "beginOffset": 1961,
+            "endOffset": 1994,
+            "start": 146.16,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "Truman",
+            "beginOffset": 2048,
+            "endOffset": 2054,
+            "start": 152.81,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "that day",
+            "beginOffset": 2068,
+            "endOffset": 2076,
+            "start": 154.74,
+            "score": null
+        },
+        {
+            "type": "ORDINAL",
+            "text": "first",
+            "beginOffset": 2147,
+            "endOffset": 2152,
+            "start": 159.17,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "martin Luther",
+            "beginOffset": 2276,
+            "endOffset": 2289,
+            "start": 170.04,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "Jr national",
+            "beginOffset": 2295,
+            "endOffset": 2306,
+            "start": 170.77,
+            "score": null
+        },
+        {
+            "type": "CARDINAL",
+            "text": "three",
+            "beginOffset": 2436,
+            "endOffset": 2441,
+            "start": 182.28,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "american",
+            "beginOffset": 2571,
+            "endOffset": 2579,
+            "start": 193.87,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "july 4th",
+            "beginOffset": 2588,
+            "endOffset": 2596,
+            "start": 195.19,
+            "score": null
+        },
+        {
+            "type": "CARDINAL",
+            "text": "two",
+            "beginOffset": 3281,
+            "endOffset": 3284,
+            "start": 240.55,
+            "score": null
+        },
+        {
+            "type": "CARDINAL",
+            "text": "two",
+            "beginOffset": 3449,
+            "endOffset": 3452,
+            "start": 252.52,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "Lincoln",
+            "beginOffset": 3500,
+            "endOffset": 3507,
+            "start": 257.69,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "18 63",
+            "beginOffset": 3522,
+            "endOffset": 3527,
+            "start": 259.48,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "january one",
+            "beginOffset": 3528,
+            "endOffset": 3539,
+            "start": 260.34,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "Gordon Granger",
+            "beginOffset": 3588,
+            "endOffset": 3602,
+            "start": 266.92,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 3623,
+            "endOffset": 3628,
+            "start": 269.86,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 3880,
+            "endOffset": 3885,
+            "start": 285.81,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 3986,
+            "endOffset": 3991,
+            "start": 293.14,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "Dominion",
+            "beginOffset": 4110,
+            "endOffset": 4118,
+            "start": 301.92,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Virginia",
+            "beginOffset": 4139,
+            "endOffset": 4147,
+            "start": 304.25,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Carolinas",
+            "beginOffset": 4153,
+            "endOffset": 4162,
+            "start": 304.83,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "Georgia",
+            "beginOffset": 4163,
+            "endOffset": 4170,
+            "start": 305.61,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "texas",
+            "beginOffset": 4190,
+            "endOffset": 4195,
+            "start": 308.73,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "american",
+            "beginOffset": 4780,
+            "endOffset": 4788,
+            "start": 343.46,
+            "score": null
+        },
+        {
+            "type": "EVENT",
+            "text": "World War",
+            "beginOffset": 4964,
+            "endOffset": 4973,
+            "start": 357.11,
+            "score": null
+        },
+        {
+            "type": "EVENT",
+            "text": "World War Two",
+            "beginOffset": 4995,
+            "endOffset": 5008,
+            "start": 358.49,
+            "score": null
+        },
+        {
+            "type": "GPE",
+            "text": "America",
+            "beginOffset": 5111,
+            "endOffset": 5118,
+            "start": 366.45,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "american",
+            "beginOffset": 5128,
+            "endOffset": 5136,
+            "start": 367.27,
+            "score": null
+        },
+        {
+            "type": "DATE",
+            "text": "july 4th",
+            "beginOffset": 5158,
+            "endOffset": 5166,
+            "start": 369.55,
+            "score": null
+        },
+        {
+            "type": "ORG",
+            "text": "african american african american",
+            "beginOffset": 5254,
+            "endOffset": 5287,
+            "start": 377.29,
+            "score": null
+        },
+        {
+            "type": "NORP",
+            "text": "african american",
+            "beginOffset": 5421,
+            "endOffset": 5437,
+            "start": 387.87,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "Wiggins",
+            "beginOffset": 5519,
+            "endOffset": 5526,
+            "start": 394.06,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "Nightwatch",
+            "beginOffset": 5543,
+            "endOffset": 5553,
+            "start": 395.5,
+            "score": null
+        },
+        {
+            "type": "PERSON",
+            "text": "William H Wiggins jr",
+            "beginOffset": 5590,
+            "endOffset": 5610,
+            "start": 554.7,
+            "score": null
+        }
+    ]
+}
