@@ -8,6 +8,18 @@ import logging
 from amp.file_handler import * 
 
 setup_logging('ner_evaluation', True)
+
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-g", "--ground-truth-file", type=str, required=True, help="Ground Truth file path.")
@@ -15,7 +27,7 @@ if __name__ == '__main__':
     parser.add_argument("--entity-set", type=str, help="Entity set of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
     parser.add_argument("--ground-truth-entities", type=str, help="Ground truth entities of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
     parser.add_argument("--tool", type=str, help="MGM Tool used for Named Entity Recognition output.", choices=['spacy', 'comprehend'])
-    parser.add_argument("--match-types", type=bool, help="Entity or Entity type should match", default=False)
+    parser.add_argument("--match-types", type=str2bool, help="Entity or Entity type should match", default=False)
     parser.add_argument("-u", "--use-case", type=str,  required=True, help="Use Case for evaluation", choices=['all_entity_instances_tool_specified', 'unique_entity_instances_tool_specified', 'all_entity_instances_mapped', 'unique_entity_instances_mapped'])
     args = parser.parse_args()
 

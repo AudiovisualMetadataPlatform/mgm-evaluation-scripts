@@ -12,7 +12,7 @@ class AllEntityInstances():
             self.entity_set = tool
             self.ground_truth_entities = tool
         gt = self.ground_truth_values(gt)
-        mgm = self.mgm_output_values(mgm)
+        mgm = self.mgm_output_values(mgm, tool)
         return self.comparisons(gt, mgm, tool, types, type_match)
         
     def ground_truth_values(self, filename):
@@ -30,13 +30,13 @@ class AllEntityInstances():
             g['gt_text'] = g.pop('text')
         return gt
 
-    def mgm_output_values(self, filename):
+    def mgm_output_values(self, filename, tool):
         mgm = read_json_file(filename)
         mgm = mgm['entities']
         for m in mgm:
             #convert entity type to corresponding common entity type if entity_set selected is 'common'
             if self.entity_set == 'common':
-                m['type'] = self.entity_keys[self.entity_set][m['type'].upper()]
+                m['type'] = self.entity_keys[tool][m['type'].upper()]
             m['mgm_type'] = m.pop('type')
             m['mgm_text'] = m.pop('text')
         return mgm
@@ -49,7 +49,7 @@ class AllEntityInstances():
         total_gt = 0
         total_mgm = 0
         if len(types) == 0:
-            types = [k for k, v in self.entity_keys[tool].items()]
+            types = [k for k, v in self.entity_keys[self.entity_set].items()]
         types = [t.upper() for t in types]
         #compare each gt term with each mgm to determine if tp or fn
         for g in gt:
