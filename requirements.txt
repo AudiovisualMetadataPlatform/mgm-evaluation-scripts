@@ -1,3 +1,0 @@
-python-Levenshtein
-num2words
-jiwer
