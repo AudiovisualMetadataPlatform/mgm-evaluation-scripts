@@ -11,7 +11,7 @@ Python script to evaluate Video Optical Character Recognition MGM output by comp
 |----------|:-------------:|------:|------:|
 | Ground Truth File |  -g | --ground-truth-file | any string |
 | MGM output File |  -m | --mgm-output-file | any string |
-| Use Case |  -u | --use-case| any string |
+| Use Case |  -u | --use-case| unique_text |
 | Help |  -h | | |
 
 ## Sample commands

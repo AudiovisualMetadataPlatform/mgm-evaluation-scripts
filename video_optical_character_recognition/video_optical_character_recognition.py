@@ -12,7 +12,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-g", "--ground-truth-file", type=str, required=True, help="Ground Truth file path.")
     parser.add_argument("-m", "--mgm-output-file", type=str, required=True, help="MGM output file path.")
-    parser.add_argument("-u", "--use-case", type=str, required=True, help="MGM output file path.", choices=['unique_text'])
+    parser.add_argument("-u", "--use-case", type=str, required=True, help="MGM output file path.", choices=['unique_text', 'each_text'])
     args = parser.parse_args()
     try:
         filename = get_file_name(args.mgm_output_file)

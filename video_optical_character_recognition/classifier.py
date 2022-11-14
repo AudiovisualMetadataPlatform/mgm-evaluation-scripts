@@ -1,5 +1,5 @@
 from amp.file_handler import *
-from unique_texts import UniqueText
+from text import Text
 from metrics import Metrics
 import logging
 
@@ -7,7 +7,10 @@ class Classifier():
     def __init__(self, use_case):
         logging.info("Evaluating Video Optical Character Recognition")
         if use_case == 'unique_text':
-            self.type = UniqueText()
+            self.type = Text('unique')
+        elif use_case == 'each_text':
+            self.type = Text('each')
+
         self.metrics = Metrics()
     
     def scores(self, cm):
@@ -48,23 +51,14 @@ class Classifier():
     def evaluate(self, ground_truth_file, mgm_output_file):
         logging.info("Comparing ground truth and MGM output files")
         gt_texts = self.gtToDicts(ground_truth_file)
-        unique_gt = self.uniqueTexts(gt_texts)
-
         mgm_texts = self.ampJsonToDicts(mgm_output_file)
-        unique_mgm = self.uniqueTexts(mgm_texts)
-
         #get confusion matrix
-        cmu = self.type.confusionMatrix(unique_gt, unique_mgm)
+        cmu = self.type.confusionMatrix(gt_texts, mgm_texts)
         #get counts of each unique text
         cmu_w_counts = self.counts(cmu['combined'], gt_texts, mgm_texts)
-
         #get scores from confusion matrix
         scores = self.scores(cmu)
         return scores, cmu_w_counts
-
-    def uniqueTexts(self, data):
-        unique = list(set([d['text'] for d in data]))
-        return unique
 
     def gtToDicts(self, gt_file):
         gt = read_csv_file(gt_file)
