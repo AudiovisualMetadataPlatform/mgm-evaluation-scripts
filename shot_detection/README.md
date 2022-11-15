@@ -17,5 +17,5 @@ Python script to evaluate Shot Detection MGM output by comparing with ground tru
 ## Sample commands
 
 ```bash
-$ amp_python.sif shot_detection.py -g sample_data/sample_gt.txt -m sample_data/sample_azure.json -t 3
+$ amp_python.sif shot_detection.py -g sample_data/sample_gt.csv -m sample_data/sample_azure.json -t 3
 ```
