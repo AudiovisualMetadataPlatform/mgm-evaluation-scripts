@@ -1,9 +1,10 @@
 .ipynb_checkpoints
 __pycache__
-*.csv
 *.log
 *.ipynb
 mydf.py
 original.py
 data/
 .DS_Store
+list.png
+test/
