@@ -64,15 +64,15 @@ class Classifier:
 
     def scoring(self, cf, gt, mgm):
         scores = {}
-        scores['precision'] = self.metrics.precision(cf[0], cf[1])
-        scores['recall'] = self.metrics.recall(cf[0], cf[2])
-        scores['f1'] = self.metrics.f1(cf[0], cf[1], cf[2])
-        scores['accuracy'] = self.metrics.accuracy(cf[0], gt)
-        scores['gt_count'] = cf[3]
-        scores['mgm_count'] = cf[4]
-        scores['true_pos'] = len(cf[0])
-        scores['false_pos'] = len(cf[1])
-        scores['false_neg'] = len(cf[2])
+        scores['overall_precision'] = self.metrics.precision(cf[0], cf[1])
+        scores['overall_recall'] = self.metrics.recall(cf[0], cf[2])
+        scores['overall_f1'] = self.metrics.f1(cf[0], cf[1], cf[2])
+        scores['overall_accuracy'] = self.metrics.accuracy(cf[0], gt)
+        scores['total_gt'] = cf[3]
+        scores['total_mgm'] = cf[4]
+        scores['true_positive'] = len(cf[0])
+        scores['false_positive'] = len(cf[1])
+        scores['false_negative'] = len(cf[2])
         if self.type == 'by_seconds':
             #add counts of gt by label
             gtbl = self.secondsByLabel(gt, 'gt', 'label')
@@ -83,7 +83,7 @@ class Classifier:
             for k, v in mgmbl.items():
                 scores[k] = len(v)
             #add counts of true positives by label
-            tpbl = self.secondsByLabel(cf[0], 'true_pos', 'gt_label')
+            tpbl = self.secondsByLabel(cf[0], 'true_positive', 'gt_label')
             for k, v in tpbl.items():
                 scores[k] = len(v)
         elif type == 'by_segments':
@@ -96,7 +96,7 @@ class Classifier:
             for k, v in mgmbl.items():
                 scores[k] = len(v)
             #add counts of true positives by label
-            tpbl = self.segmentsByLabel(cf[0], 'true_pos')
+            tpbl = self.segmentsByLabel(cf[0], 'true_positive')
             for k, v in tpbl.items():
                 scores[k] = len(v)
         #get accuracy by label
