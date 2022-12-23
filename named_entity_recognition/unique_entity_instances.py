@@ -75,6 +75,8 @@ class UniqueEntityInstances():
         false_pos = []
         total_gt = 0
         total_mgm = 0
+        if tool is None:
+            tool = self.entity_set
         if len(types) == 0:
             types = [k for k, v in self.entity_keys[tool].items()]
         types = [t.upper() for t in types]

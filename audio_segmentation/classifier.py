@@ -31,7 +31,8 @@ class Classifier:
             #create an empty list for label if not in true positives
             if tpbl_key not in tpbl:
                 tpbl[tpbl_key] = []
-            accbl[accbl_key] = self.metrics.accuracy(tpbl[tpbl_key], gtbl[gtbl_key])
+            if gtbl_key in gtbl.keys():
+                accbl[accbl_key] = self.metrics.accuracy(tpbl[tpbl_key], gtbl[gtbl_key])
         return accbl
 
     def secondsByLabel(self, seconds, second_type, label_key):

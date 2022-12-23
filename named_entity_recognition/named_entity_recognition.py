@@ -45,7 +45,7 @@ if __name__ == '__main__':
         filename = get_file_name(args.mgm_output_file)
         ner = NER(args.use_case, args.entity_set, args.ground_truth_entities)
         scores, output_data = ner.evaluate(args.ground_truth_file, args.mgm_output_file, args.tool, args.match_types)
-        create_csv_from_dict(filename + '_scores.csv', [scores])
-        create_csv_from_dict(filename + '_comparison_results.csv', output_data)
+        create_csv_from_dict(filename + '_' + args.use_case + '_' +  str(args.match_types) + '_scores.csv', [scores])
+        create_csv_from_dict(filename + '_' + args.use_case + '_' +  str(args.match_types) + '_comparison_results.csv', output_data)
     except:
         logging.error(traceback.format_exc())
