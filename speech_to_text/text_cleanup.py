@@ -46,27 +46,27 @@ def numsToWords(transcript):
   newwordlist = []
   for w in words:
     if re.search('\d+', w):
-      w = w.replace(',', '')
-      if w[0] == '$':
-        x = w.replace('$', '').split('.')
-        if x[0] != '0':
-          numword = num2words(x[0])
-          newwordlist.append(numword)
-          if x[0] == '1':
-            newwordlist.append('dollar')
-          else:
-            newwordlist.append('dollars')
-        if len(x) == 2:
-          if x[1] != '00':
-            numword = num2words(x[1])
+      try:
+        w = w.replace(',', '')
+        if w[0] == '$':
+          x = w.replace('$', '').split('.')
+          if x[0] != '0':
+            numword = num2words(x[0])
             newwordlist.append(numword)
-            newwordlist.append('cents')
-      else:
-        try:
-          numword = num2words(w)
-          newwordlist.append(numword)
-        except:
-          newwordlist.append(w)
+            if x[0] == '1':
+              newwordlist.append('dollar')
+            else:
+              newwordlist.append('dollars')
+          if len(x) == 2:
+            if x[1] != '00':
+              numword = num2words(x[1])
+              newwordlist.append(numword)
+              newwordlist.append('cents')
+        else:
+            numword = num2words(w)
+            newwordlist.append(numword)
+      except:
+        newwordlist.append(w)
     else:
       newwordlist.append(w)
   newtranscript = ' '.join(newwordlist)
@@ -75,8 +75,8 @@ def numsToWords(transcript):
 def umuh(transcript):
   """Remove 'um's and 'uh's from transcript """
   logging.info("Updating transcript to remove um's and uh's")
-  transcript = transcript.replace('um', '')
-  transcript = transcript.replace('uh', '')
+  stop = ['um', 'uh', 'mm']
+  transcript = " ".join([word for word in transcript.split() if word not in (stop)])
   return transcript
 
 def normalize(transcript):
