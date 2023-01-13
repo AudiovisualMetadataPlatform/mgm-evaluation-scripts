@@ -24,7 +24,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-g", "--ground-truth-file", type=str, required=True, help="Ground Truth file path.")
     parser.add_argument("-m", "--mgm-output-file", type=str, required=True, help="MGM output file path.")
-    parser.add_argument("--entity-set", type=str, help="Entity set of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
+    parser.add_argument("--entity-types", type=str, help="Entity types to include in scoring")
     parser.add_argument("--ground-truth-entities", type=str, help="Ground truth entities of Named Entity Recognition", choices=['spacy', 'comprehend', 'common'])
     parser.add_argument("--tool", type=str, help="MGM Tool used for Named Entity Recognition output.", choices=['spacy', 'comprehend'])
     parser.add_argument("--match-types", type=str2bool, help="Entity or Entity type should match", default=False)
@@ -35,15 +35,12 @@ if __name__ == '__main__':
         parser.error("--tool required for category {}".format(args.category))
 
     if args.use_case in ['unique_entity_instances_mapped', 'all_entity_instances_mapped']:
-        if (args.entity_set == None or args.entity_set == ''):
-            parser.error("--entity-set required for category {}".format(args.category))
-        
         if (args.ground_truth_entities == None or args.ground_truth_entities == ''):
             parser.error("--ground-truth-entities required for category {}".format(args.category))
 
     try:
         filename = get_file_name(args.mgm_output_file)
-        ner = NER(args.use_case, args.entity_set, args.ground_truth_entities)
+        ner = NER(args.use_case, args.entity_types, args.ground_truth_entities)
         scores, output_data = ner.evaluate(args.ground_truth_file, args.mgm_output_file, args.tool, args.match_types)
         create_csv_from_dict(filename + '_' + args.use_case + '_' +  str(args.match_types) + '_scores.csv', [scores])
         create_csv_from_dict(filename + '_' + args.use_case + '_' +  str(args.match_types) + '_comparison_results.csv', output_data)

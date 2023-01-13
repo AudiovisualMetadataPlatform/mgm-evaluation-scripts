@@ -2,9 +2,9 @@ from amp.file_handler import *
 from itertools import groupby
 
 class UniqueEntityInstances():
-    def __init__(self, entity_keys, type, entity_set, ground_truth_entities):
+    def __init__(self, entity_keys, type, ground_truth_entities):
         self.entity_keys = entity_keys
-        self.entity_set = entity_set
+        self.entity_set = 'common'
         self.ground_truth_entities = ground_truth_entities
         self.type = type
 
@@ -52,10 +52,6 @@ class UniqueEntityInstances():
         if len(types) == 0:
             types = [k for k, v in self.entity_keys[self.entity_set].items()]
         for m in mgm:
-            #convert entity type to corresponding common entity type if entity_set selected is 'common'
-            if self.entity_set == 'common':
-                m['type'] = self.entity_keys[tool][m['type'].upper()]
-            #we only care about comparing entities that are in the list of types specified
             if m['type'] in types:
                 new_m = {}
                 #name type and text unique to mgm
