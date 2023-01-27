@@ -73,14 +73,14 @@ class Classifier():
         logging.info("Preparing scores")
         wer = self.metrics.wordErrorRate(normalized_gt,normalized_mgm)
         return {
-            "word_error_rate": wer,
-            "match_error_rate": self.metrics.matchErrorRate(normalized_gt,normalized_mgm),
-            "word_info_loss": self.metrics.wordInfoLoss(normalized_gt,normalized_mgm),
-            "word_info_processed": self.metrics.wordInfoProcessed(normalized_gt,normalized_mgm),
-            "character_error_rate": self.metrics.characterErrorRate(normalized_gt,normalized_mgm),
-            "substitution_rate": self.metrics.substitutionErrorRate(wer, error_rates['substitutions']),
-            "insertion_rate": self.metrics.insertionErrorRate(wer, error_rates['insertions']),
-            "deletion_rate": self.metrics.deletionErrorRate(wer, error_rates['deletions'])
+            "Word Error Rate": wer,
+            "Match Error Rate": self.metrics.matchErrorRate(normalized_gt,normalized_mgm),
+            "Word Info Loss": self.metrics.wordInfoLoss(normalized_gt,normalized_mgm),
+            "Word Info Processed": self.metrics.wordInfoProcessed(normalized_gt,normalized_mgm),
+            "Character Error Rate": self.metrics.characterErrorRate(normalized_gt,normalized_mgm),
+            "Substitution Rate": self.metrics.substitutionErrorRate(wer, error_rates['substitutions']),
+            "Insertion Rate": self.metrics.insertionErrorRate(wer, error_rates['insertions']),
+            "Deletion Rate": self.metrics.deletionErrorRate(wer, error_rates['deletions'])
         }
     
     def _preprocess(self,
