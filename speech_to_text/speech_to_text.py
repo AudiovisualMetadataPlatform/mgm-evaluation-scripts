@@ -19,13 +19,13 @@ if __name__ == '__main__':
         current = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
         filename =  get_file_name(args.mgm_output_file) + current + ".json"
         output_path = os.path.join(args.output_file_path, 'speech_to_text')
-        scores, output_data = STT().evaluate(args.ground_truth_file, args.mgm_output_file)
-        with open('headers.json', 'r') as f:
-            headers = json.load(f)
+        stt = STT()
+        scores, comparisons = stt.evaluate(args.ground_truth_file, args.mgm_output_file)
+        headers = stt.get_headers(comparisons)
         data = {
             "scores": scores,
             "headers": headers,
-            "comparison": output_data
+            "comparison": comparisons
         }
         abs_path = create_json_file(output_path, filename, data)
         print("success:" + abs_path)
