@@ -50,7 +50,8 @@ def numsToWords(transcript):
         w = w.replace(',', '')
         if w[0] == '$':
           x = w.replace('$', '').split('.')
-          if x[0] != '0':
+          logging.info(x)
+          if x[0].strip() != '' and x[0] != '0':
             numword = num2words(x[0])
             newwordlist.append(numword)
             if x[0] == '1':
@@ -58,7 +59,7 @@ def numsToWords(transcript):
             else:
               newwordlist.append('dollars')
           if len(x) == 2:
-            if x[1] != '00':
+            if x[1].strip() != '' and x[1] != '00':
               numword = num2words(x[1])
               newwordlist.append(numword)
               newwordlist.append('cents')
