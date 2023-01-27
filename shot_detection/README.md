@@ -12,10 +12,11 @@ Python script to evaluate Shot Detection MGM output by comparing with ground tru
 | Ground Truth File |  -g | --ground-truth-file | any string |
 | MGM output File |  -m | --mgm-output-file | any string |
 | Threshold |  -t | --threshold | integer |
+| Output File Path |  -o | --output-file-path | any string |
 | Help |  -h | | |
 
 ## Sample commands
 
 ```bash
-$ amp_python.sif shot_detection.py -g sample_data/sample_gt.csv -m sample_data/sample_azure.json -t 3
+$ amp_python.sif shot_detection.py -g sample_data/sample_gt.csv -m sample_data/sample_azure.json -t 3 -o outputs
 ```
