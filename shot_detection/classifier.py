@@ -2,6 +2,7 @@ import metrics as metrics
 from amp.file_handler import *
 from amp.time_convertor import *
 import logging
+from itertools import chain
 
 class Classifier():
     def __init__(self):
