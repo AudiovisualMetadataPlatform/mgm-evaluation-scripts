@@ -13,6 +13,7 @@ Python script to evaluate Audio Segmentation MGM output by comparing with ground
 | MGM output File |  -m | --mgm-output-file | any string |
 | Threshold |  -t | --threshold | integer |
 | Use Case |  -u | --use-case | by_segments, by_seconds |
+| Output File Path |  -o | --output-file-path | any string |
 | Help |  -h | | |
 
 ## Sample commands

@@ -1,0 +1,40 @@
+[
+    {
+    "field": "gt_second",
+    "label": "GT Second"
+    },{
+    "field": "mgm_second",
+    "label": "MGM Second"
+    },{
+    "field": "gt_label",
+    "label": "GT Lable"
+    },{
+        "field": "mgm_label",
+        "label": "MGM Label"
+    },{
+        "field": "gt_start",
+        "label": "GT Start"
+    },{
+        "field": "start",
+        "label": "MGM Start"
+    },
+    {
+        "field": "gt_end",
+        "label": "GT End"
+    },{
+        "field": "end",
+        "label": "MGM End"
+    },{
+        "field": "s_distance",
+        "label": "Start Distance"
+    },{
+        "field": "e_distance",
+        "label": "End Distance"
+    },{
+        "field": "label",
+        "label": "Label"
+    },{
+        "field": "comparison",
+        "label": "Comparison"
+    }
+]
