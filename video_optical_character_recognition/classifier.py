@@ -2,6 +2,7 @@ from amp.file_handler import *
 from text import Text
 from metrics import Metrics
 import logging
+from itertools import chain
 
 class Classifier():
     def __init__(self, use_case):
@@ -17,15 +18,15 @@ class Classifier():
         gt = cm['tp']+cm['fn']
         mgm = cm['tp']+cm['fp']
         scores = {}
-        scores['precision'] = self.metrics.precision(cm['tp'], cm['fp'])
-        scores['recall'] = self.metrics.recall(cm['tp'], cm['fn'])
-        scores['f1'] = self.metrics.f1(cm['tp'], cm['fp'], cm['fn'])
-        scores['accuracy'] = self.metrics.accuracy(cm['tp'], gt)
-        scores['gt_count'] = len(gt)
-        scores['mgm_count'] = len(mgm)
-        scores['true_pos'] = len(cm['tp'])
-        scores['false_pos'] = len(cm['fp'])
-        scores['false_neg'] = len(cm['fn'])
+        scores['Overall Precision'] = self.metrics.precision(cm['tp'], cm['fp'])
+        scores['Overall Recall'] = self.metrics.recall(cm['tp'], cm['fn'])
+        scores['Overall F1'] = self.metrics.f1(cm['tp'], cm['fp'], cm['fn'])
+        scores['Overall Accuracy'] = self.metrics.accuracy(cm['tp'], gt)
+        scores['Total GT'] = len(gt)
+        scores['Total MGM'] = len(mgm)
+        scores['True Positive'] = len(cm['tp'])
+        scores['False Positive'] = len(cm['fp'])
+        scores['False Negative'] = len(cm['fn'])
         return scores
 
     def counts(self, cmu_combined, gt, mgm):
@@ -64,3 +65,12 @@ class Classifier():
         gt = read_csv_file(gt_file)
         gt = [g for g in gt]
         return gt
+
+    def get_headers(self, comparisons):
+        headers = read_json_file('headers.json')
+        unique_headers = list(set(chain.from_iterable(sub.keys() for sub in comparisons)))
+        output = []
+        for header in headers:
+            if header['field'] in unique_headers:
+                output.append(header)
+        return output

@@ -1,0 +1,15 @@
+[
+    {
+    "field": "mgm_counts",
+    "label": "Total MGM"
+    },{
+    "field": "text",
+    "label": "Text"
+    },{
+    "field": "gt_counts",
+    "label": "Total GT"
+    },{
+        "field": "comparison",
+        "label": "Comparison"
+    }
+]

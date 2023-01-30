@@ -37,3 +37,4 @@ if __name__ == '__main__':
         print("success:" + abs_path)
     except:
         logging.error(traceback.format_exc())
+        print(traceback.format_exc())
