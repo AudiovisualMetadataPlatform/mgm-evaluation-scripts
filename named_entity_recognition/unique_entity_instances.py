@@ -57,6 +57,8 @@ class UniqueEntityInstances():
                 #name type and text unique to mgm
                 new_m['mgm_type'] = m['type']
                 new_m['mgm_text'] = m['text']
+                new_m["mgm_beginOffset"] = m['beginOffset']
+                new_m["mgm_endOffset"] = m['endOffset']
                 new_mgm.append(new_m)
         #get unique list of dicts and counts
         unique_mgm = self.unique_and_count(new_mgm)

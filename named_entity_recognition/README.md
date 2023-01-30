@@ -16,32 +16,33 @@ Python scripts to evaluate NER MGM output by comparing with ground truth and cal
 | Tool | | --tool | spacy, comprehend |
 | Entity Types | | --entity-types | comma separated string |
 | Ground Truth Entities | | --ground-truth-entities | spacy, comprehend, common |
-| Match Types | | --match-types | Boolean | Default is False
+| Match Types | | --match-types | Boolean | Default is False |
+| Output File Path |  -o | --output-file-path | any string |
 | Help |  -h | | |
 
 ## Sample commands
 
 ### Test Case 1
 ```bash
-$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_spacy.json -u all_entity_instances_tool_specified --tool spacy
+$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_spacy.json -u all_entity_instances_tool_specified --tool spacy -o outputs
 ```
 
 ### Test Case 2
 ```bash
-$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_spacy.json -u unique_entity_instances_mapped --ground-truth-entities spacy
+$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_spacy.json -u unique_entity_instances_mapped --ground-truth-entities spacy -o outputs
 ```
 
 ### Test Case 3
 ```bash
-$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_spacy.json -u all_entity_instances_tool_specified --tool spacy --match-types y
+$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_spacy.json -u all_entity_instances_tool_specified --tool spacy --match-types y -o outputs
 ```
 
 ### Test Case 4
 ```bash
-$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_aws.json -u unique_entity_instances_mapped --ground-truth-entities spacy --match-types n
+$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_aws.json -u unique_entity_instances_mapped --ground-truth-entities spacy --match-types n -o outputs
 ```
 
 ### Test Case 5
 ```bash
-$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_aws.json -u all_entity_instances_mapped --ground-truth-entities spacy --match-types y
+$ amp_python.sif named_entity_recognition.py -g sample_data/sample_spacy_gt.csv -m sample_data/sample_aws.json -u all_entity_instances_mapped --ground-truth-entities spacy --match-types y -o outputs
 ```
