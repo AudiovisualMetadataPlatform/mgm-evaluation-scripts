@@ -2,6 +2,7 @@ import metrics as metrics
 from amp.file_handler import *
 from amp.time_convertor import *
 import logging
+from itertools import chain
 
 class Classifier():
     def __init__(self):
@@ -108,24 +109,34 @@ class Classifier():
                     s[k] = convertSecondsToTimestamp(v)
         #get scores
         scores = {}
-        scores['threshold'] = threshold
-        scores['precision'] = self.metrics.precision(self.countTruePos(cf[0]), cf[1])
-        scores['recall'] = self.metrics.recall(self.countTruePos(cf[0]),cf[2])
-        scores['f1'] = self.metrics.f1(self.countTruePos(cf[0]), cf[1], cf[2])
-        scores['gt_count'] = gtcount
-        scores['mgm_count'] = mgmcount
-        scores['true_pos'] = self.countTruePos(cf[0])
-        scores['false_pos'] = len(cf[1])
-        scores['false_neg'] = len(cf[2])
-        scores['cut'] = self.countTpTransitions(cf[0], 'cut')
-        scores['dissolve'] = self.countTpTransitions(cf[0], 'dissolve')
-        scores['lighting change'] = self.countTpTransitions(cf[0], 'lighting change')
-        scores['panning'] = self.countTpTransitions(cf[0], 'panning')
-        scores['zoom'] = self.countTpTransitions(cf[0], 'zoom in') + self.countTpTransitions(cf[0], 'zoom out')
+        scores['Overall Precision'] = self.metrics.precision(self.countTruePos(cf[0]), cf[1])
+        scores['Overall Recall'] = self.metrics.recall(self.countTruePos(cf[0]),cf[2])
+        scores['Overall F1'] = self.metrics.f1(self.countTruePos(cf[0]), cf[1], cf[2])
+        scores['Total GT'] = gtcount
+        scores['Total MGM'] = mgmcount
+        scores['True Positive'] = self.countTruePos(cf[0])
+        scores['False Positive'] = len(cf[1])
+        scores['False Negative'] = len(cf[2])
+        scores['True Positive Cut'] = self.countTpTransitions(cf[0], 'cut')
+        scores['True Positive Dissolve'] = self.countTpTransitions(cf[0], 'dissolve')
+        scores['True Positive Lighting Change'] = self.countTpTransitions(cf[0], 'lighting change')
+        scores['True Positive Panning'] = self.countTpTransitions(cf[0], 'panning')
+        scores['True Positive Zoom'] = self.countTpTransitions(cf[0], 'zoom in') + self.countTpTransitions(cf[0], 'zoom out')
+        
         if sorted_mo[-1]['comparison'] == 'true positive':
-            scores[sorted_mo[-1]['transition_type']] -= 1
+            type = sorted_mo[-1]['transition_type'].capitalize()
+            scores['True Positive '+type] -= 1
 
         return scores, sorted_mo
+
+    def get_headers(self, comparisons):
+        headers = read_json_file('headers.json')
+        unique_headers = list(set(chain.from_iterable(sub.keys() for sub in comparisons)))
+        output = []
+        for header in headers:
+            if header['field'] in unique_headers:
+                output.append(header)
+        return output
 
 
     

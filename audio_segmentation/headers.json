@@ -1,0 +1,34 @@
+[
+    {
+        "field": "comparison",
+        "label": "Comparison"
+    },
+    {
+        "field": "gt_second",
+        "label": "GT Second"
+    },
+    {
+        "field": "mgm_second",
+        "label": "MGM Second"
+    },
+    {
+        "field": "gt_start",
+        "label": "GT Start"
+    },
+    {
+        "field": "gt_end",
+        "label": "GT End"
+    },
+    {
+        "field": "start",
+        "label": "MGM Start"
+    },
+    {
+        "field": "end",
+        "label": "MGM End"
+    },
+    {
+        "field": "label",
+        "label": "Label"
+    }
+]

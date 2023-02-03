@@ -6,31 +6,30 @@ def test_classifier_scores():
     ground_truth_file = os.path.join("sample_data", "sample_gt.csv")
     mgm_output_file = os.path.join("sample_data", "sample_segments.json")
     scores, output_data = AudioSegmentation('by_seconds').evaluate(ground_truth_file, mgm_output_file)
-    assert scores['precision'] == 0.5893805309734513
-    assert scores['recall'] == 0.5893805309734513
-    assert scores['f1'] == 0.5893805309734513
-    assert scores['accuracy'] == 0.5893805309734513
-    assert scores['gt_count'] == 1695
-    assert scores['mgm_count'] == 1695
-    assert scores['true_pos'] == 999
-    assert scores['false_pos'] == 696
-    assert scores['false_neg'] == 696
-    assert scores['gt_silence'] == 4
-    assert scores['gt_music'] == 1278
-    assert scores['gt_speech'] == 164
-    assert scores['gt_noise'] == 249
-    assert scores['mgm_silence'] == 4
-    assert scores['mgm_music'] == 815
-    assert scores['mgm_speech'] == 59
-    assert scores['mgm_noise'] == 817
-    assert scores['true_pos_silence'] == 4
-    assert scores['true_pos_music'] == 754
-    assert scores['true_pos_speech'] == 52
-    assert scores['true_pos_noise'] == 189
-    assert scores['accuracy_silence'] == 1.0
-    assert scores['accuracy_speech'] == 0.3170731707317073
-    assert scores['accuracy_music'] == 0.5899843505477308
-    assert scores['accuracy_noise'] == 0.7590361445783133
+    assert scores['Overall Precision'] == 0.5893805309734513
+    assert scores['Overall Recall'] == 0.5893805309734513
+    assert scores['Overall F1'] == 0.5893805309734513
+    assert scores['Overall Accuracy'] == 0.5893805309734513
+    assert scores['Total GT'] == 1695
+    assert scores['Total MGM'] == 1695
+    assert scores['True Positive'] == 999
+    assert scores['False Positive'] == 696
+    assert scores['False Negative'] == 696
+    assert scores['GT Silence'] == 4
+    assert scores['GT Music'] == 1278
+    assert scores['GT Speech'] == 164
+    assert scores['GT Noise'] == 249
+    assert scores['MGM Silence'] == 4
+    assert scores['MGM Music'] == 815
+    assert scores['MGM Speech'] == 59
+    assert scores['MGM Noise'] == 817
+    assert scores['True Positive Silence'] == 4
+    assert scores['True Positive Music'] == 754
+    assert scores['True Positive Speech'] == 52
+    assert scores['True Positive Noise'] == 189
+    assert scores['Accuracy Silence'] == 1.0
+    assert scores['Accuracy Speech'] == 0.3170731707317073
+    assert scores['Accuracy Music'] == 0.5899843505477308
+    assert scores['Accuracy Noise'] == 0.7590361445783133
     
 test_classifier_scores()
-    

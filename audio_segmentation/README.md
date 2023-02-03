@@ -13,16 +13,17 @@ Python script to evaluate Audio Segmentation MGM output by comparing with ground
 | MGM output File |  -m | --mgm-output-file | any string |
 | Threshold |  -t | --threshold | integer |
 | Use Case |  -u | --use-case | by_segments, by_seconds |
+| Output File Path |  -o | --output-file-path | any string |
 | Help |  -h | | |
 
 ## Sample commands
 
 ### Audio Segmentation By Segments
 ```bash
-$ amp_python.sif audio_segmentation.py -g sample_data/sample_gt.csv -m sample_data/sample_segments.json -t 2 -u "by_segments"
+$ amp_python.sif audio_segmentation.py -g sample_data/sample_gt.csv -m sample_data/sample_segments.json -t 2 -u "by_segments" -o outputs
 ```
 
 ### Audio Segmentation By Seconds
 ```bash
-$ amp_python.sif audio_segmentation.py -g sample_data/sample_gt.csv -m sample_data/sample_segments.json -u "by_seconds"
+$ amp_python.sif audio_segmentation.py -g sample_data/sample_gt.csv -m sample_data/sample_segments.json -u "by_seconds" -o outputs
 ```

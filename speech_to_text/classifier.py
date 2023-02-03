@@ -7,6 +7,7 @@ from jiwer import transforms as tr
 from jiwer.transformations import wer_default, wer_standardize, cer_default_transform
 from amp.file_handler import *
 import logging
+from itertools import chain
 
 class Classifier():
     def __init__(self):
@@ -16,7 +17,7 @@ class Classifier():
     def evaluate(self, ground_truth_file, mgm_output_file):
         transcript = read_text_file(ground_truth_file)
         normalized_gt = normalize(transcript)
-        mgm = json.load(open(mgm_output_file, 'r'))
+        mgm = read_json_file(mgm_output_file)
         transcript = mgm["results"]["transcript"]
         normalized_mgm = normalize(transcript)
         output_list = self.generate_comparison_list(normalized_gt, normalized_mgm)
@@ -73,14 +74,14 @@ class Classifier():
         logging.info("Preparing scores")
         wer = self.metrics.wordErrorRate(normalized_gt,normalized_mgm)
         return {
-            "word_error_rate": wer,
-            "match_error_rate": self.metrics.matchErrorRate(normalized_gt,normalized_mgm),
-            "word_info_loss": self.metrics.wordInfoLoss(normalized_gt,normalized_mgm),
-            "word_info_processed": self.metrics.wordInfoProcessed(normalized_gt,normalized_mgm),
-            "character_error_rate": self.metrics.characterErrorRate(normalized_gt,normalized_mgm),
-            "substitution_rate": self.metrics.substitutionErrorRate(wer, error_rates['substitutions']),
-            "insertion_rate": self.metrics.insertionErrorRate(wer, error_rates['insertions']),
-            "deletion_rate": self.metrics.deletionErrorRate(wer, error_rates['deletions'])
+            "Word Error Rate": wer,
+            "Match Error Rate": self.metrics.matchErrorRate(normalized_gt,normalized_mgm),
+            "Word Info Loss": self.metrics.wordInfoLoss(normalized_gt,normalized_mgm),
+            "Word Info Processed": self.metrics.wordInfoProcessed(normalized_gt,normalized_mgm),
+            "Character Error Rate": self.metrics.characterErrorRate(normalized_gt,normalized_mgm),
+            "Substitution Rate": self.metrics.substitutionErrorRate(wer, error_rates['substitutions']),
+            "Insertion Rate": self.metrics.insertionErrorRate(wer, error_rates['insertions']),
+            "Deletion Rate": self.metrics.deletionErrorRate(wer, error_rates['deletions'])
         }
     
     def _preprocess(self,
@@ -143,6 +144,15 @@ class Classifier():
         i_pc = i/(s + d + i)
         errors = { 'substitutions': s_pc, 'insertions': i_pc, 'deletions': d_pc }
         return errors
+
+    def get_headers(self, comparisons):
+        headers = read_json_file('headers.json')
+        unique_headers = list(set(chain.from_iterable(sub.keys() for sub in comparisons)))
+        output = []
+        for header in headers:
+            if header['field'] in unique_headers:
+                output.append(header)
+        return output
 
 
     

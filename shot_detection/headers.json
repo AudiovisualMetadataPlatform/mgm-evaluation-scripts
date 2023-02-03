@@ -1,0 +1,26 @@
+[
+    {
+        "field": "comparison",
+        "label": "Comparison"
+    },
+    {
+        "field": "gt_start",
+        "label": "GT Start"
+    },
+    {
+        "field": "gt_end",
+        "label": "GT End"
+    },
+    {
+        "field": "start",
+        "label": "MGM Start"
+    },
+    {
+        "field": "end",
+        "label": "MGM End"
+    },
+    {
+        "field": "transition_type",
+        "label": "GT Transition Type"
+    }
+]

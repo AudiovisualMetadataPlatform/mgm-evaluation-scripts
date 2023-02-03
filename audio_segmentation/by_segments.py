@@ -101,5 +101,4 @@ class ASBySegments():
                 if k in ['gt_start', 'gt_end', 'start', 'end']:
                     sm[k] = convertSecondsToTimestamp(v)
         scores = self.parent.scoring(cf, gt, mgm)
-        scores['analysis_threshold'] = threshold
         return scores, sorted_mo

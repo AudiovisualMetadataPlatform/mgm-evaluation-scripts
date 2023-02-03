@@ -36,6 +36,8 @@ class AllEntityInstances():
         for m in mgm:
             m['mgm_type'] = m.pop('type')
             m['mgm_text'] = m.pop('text')
+            m["mgm_beginOffset"] = m.pop('beginOffset')
+            m["mgm_endOffset"] = m.pop('endOffset')
         return mgm
 
     def comparisons(self, gt, mgm, tool, types, type_match=False):
@@ -56,7 +58,7 @@ class AllEntityInstances():
                 for m in mgm:
                     #if text is a match, check that it matches the character offsets within 3 characters
                     if g['gt_text'].lower() == m['mgm_text'].lower():
-                        if (int(g['beginOffset']) - m['beginOffset'] < 10) and (int(g['beginOffset']) - m['beginOffset'] > -10):
+                        if (int(g['beginOffset']) - m['mgm_beginOffset'] < 10) and (int(g['beginOffset']) - m['mgm_beginOffset'] > -10):
                             #track number of relevant mgm entities
                             #if types match OR if type_match is False, then count as tp even if entity types don't match
                             if g['gt_type'] == m['mgm_type'] or type_match == False:
