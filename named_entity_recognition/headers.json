@@ -1,40 +1,42 @@
 [
     {
-    "field": "endOffset",
-    "label": "GT EndOffset"
-    },{
-    "field": "text_and_type",
-    "label": "Text & Type"
-    },{
-    "field": "gt_type",
-    "label": "GT Type"
-    },{
-        "field": "mgm_text",
-        "label": "MGM Text"
-    },{
-        "field": "score",
-        "label": "MGM Score"
-    },{
-        "field": "mgm_beginOffset",
-        "label": "MGM BeginOffset"
+        "field": "comparison",
+        "label": "Comparison"
     },
     {
         "field": "gt_text",
         "label": "GT Text"
-    },{
-        "field": "start",
-        "label": "MGM STart"
-    },{
+    },
+    {
+        "field": "gt_type",
+        "label": "GT Type"
+    },
+    {
+        "field": "mgm_text",
+        "label": "MGM Text"
+    },
+    {
         "field": "mgm_type",
         "label": "MGM Type"
-    },{
-        "field": "mgm_endOffset",
-        "label": "MGM EndOffset"
-    },{
+    },
+    {
         "field": "beginOffset",
         "label": "GT BeginOffset"
-    },{
-        "field": "comparison",
-        "label": "Comparison"
+    },
+    {
+        "field": "endOffset",
+        "label": "GT EndOffset"
+    },
+    {
+        "field": "mgm_beginOffset",
+        "label": "MGM BeginOffset"
+    },
+    {
+        "field": "mgm_endOffset",
+        "label": "MGM EndOffset"
+    },
+    {
+        "field": "text_and_type",
+        "label": "Text & Type"
     }
 ]

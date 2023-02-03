@@ -1,27 +1,26 @@
 [
     {
-    "field": "type",
-    "label": "MGM Transition Type"
-    },{
-    "field": "transition_type",
-    "label": "GT Transition Type"
-    },{
-    "field": "gt_start",
-    "label": "GT Start"
-    },{
-        "field": "start",
-        "label": "MGM Start"
-    },{
-        "field": "gt_end",
-        "label": "GT End"
-    },{
-        "field": "end",
-        "label": "MGM End"
-    },{
-        "field": "distance",
-        "label": "Distance"
-    },{
         "field": "comparison",
         "label": "Comparison"
+    },
+    {
+        "field": "gt_start",
+        "label": "GT Start"
+    },
+    {
+        "field": "gt_end",
+        "label": "GT End"
+    },
+    {
+        "field": "start",
+        "label": "MGM Start"
+    },
+    {
+        "field": "end",
+        "label": "MGM End"
+    },
+    {
+        "field": "transition_type",
+        "label": "GT Transition Type"
     }
 ]
