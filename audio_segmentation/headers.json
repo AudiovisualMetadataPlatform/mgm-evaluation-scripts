@@ -8,8 +8,16 @@
         "label": "GT Second"
     },
     {
+        "field": "gt_label",
+        "label": "GT Label"
+    },
+    {
         "field": "mgm_second",
         "label": "MGM Second"
+    },
+    {
+        "field": "mgm_label",
+        "label": "MGM Label"
     },
     {
         "field": "gt_start",
