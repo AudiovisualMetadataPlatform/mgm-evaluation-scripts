@@ -1,12 +1,12 @@
 [
     {
     "field": "ground_truth",
-    "label": "Groundtruth"
+    "label": "Ground Truth"
     },{
     "field": "mgm",
     "label": "MGM"
     },{
     "field": "error",
-    "label": "Comparison"
+    "label": "Error"
     }
 ]
