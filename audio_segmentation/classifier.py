@@ -4,6 +4,7 @@ from by_seconds import ASBySeconds
 from by_segments import ASBySegments
 from amp.file_handler import read_json_file
 from itertools import chain
+import os
 
 class Classifier:
     def __init__(self, type):
@@ -109,7 +110,9 @@ class Classifier:
         return scores
 
     def get_headers(self, comparisons):
-        headers = read_json_file('headers.json')
+        current_file_path = os.path.abspath(__file__)
+        current_file_directory = os.path.dirname(current_file_path)
+        headers = read_json_file(os.path.join(current_file_directory, "headers.json"))
         unique_headers = list(set(chain.from_iterable(sub.keys() for sub in comparisons)))
         output = []
         for header in headers:

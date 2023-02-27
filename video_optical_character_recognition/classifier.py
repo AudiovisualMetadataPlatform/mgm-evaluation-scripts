@@ -1,7 +1,7 @@
 from amp.file_handler import *
 from text import Text
 from metrics import Metrics
-import logging
+import logging,os
 from itertools import chain
 
 class Classifier():
@@ -67,7 +67,9 @@ class Classifier():
         return gt
 
     def get_headers(self, comparisons):
-        headers = read_json_file('headers.json')
+        current_file_path = os.path.abspath(__file__)
+        current_file_directory = os.path.dirname(current_file_path)
+        headers = read_json_file(os.path.join(current_file_directory, "headers.json"))
         unique_headers = list(set(chain.from_iterable(sub.keys() for sub in comparisons)))
         output = []
         for header in headers:
