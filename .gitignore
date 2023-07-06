@@ -8,3 +8,5 @@ data/
 .DS_Store
 list.png
 test/
+/.project
+/.pydevproject
