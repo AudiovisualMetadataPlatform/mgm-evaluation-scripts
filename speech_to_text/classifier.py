@@ -139,9 +139,10 @@ class Classifier():
                 elif a['error'] == 'substitution':
                     s += 1
         #get proportions of each error type
-        s_pc = s/(s + d + i)
-        d_pc = d/(s + d + i)
-        i_pc = i/(s + d + i)
+        den = s + d + i
+        s_pc = 0 if den == 0 else s/den
+        d_pc = 0 if den == 0 else d/den
+        i_pc = 0 if den == 0 else i/den
         errors = { 'substitutions': s_pc, 'insertions': i_pc, 'deletions': d_pc }
         return errors
 
