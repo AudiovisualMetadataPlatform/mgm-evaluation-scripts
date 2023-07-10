@@ -1,5 +1,6 @@
 #!/bin/env amp_python.sif
 
+
 import argparse
 from classifier import Classifier as ShotDetection
 import traceback
