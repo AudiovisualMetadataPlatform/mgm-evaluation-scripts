@@ -64,7 +64,7 @@ def main():
     # Package it, if needed
     if args.package:
         try:
-            new_package = create_package("mgm_scoring_tools", "1.0", "mgm_scoring_tools",
+            new_package = create_package("mgm_scoring_tools", "1.0.0", "mgm_scoring_tools",
                                 Path(args.destination), destdir / installation_path,
                                 # can also be a list.
                                 depends_on='amp_python')
