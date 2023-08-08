@@ -14,7 +14,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-g", "--ground-truth-file", type=str, required=True, help="Ground Truth file path.")
     parser.add_argument("-m", "--mgm-output-file", type=str, required=True, help="MGM output file path.")
-    parser.add_argument("-t", "--threshold", required=True, type=float, help="Threshold value.")
+    parser.add_argument("-t", "--threshold", required=True, type=int, help="Threshold value.")
     parser.add_argument("-o", "--output-file-path", type=str, required=True, help="Test output file path.")
 
     args = parser.parse_args()
